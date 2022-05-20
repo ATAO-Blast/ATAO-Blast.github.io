@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Adventure-Creator-3Dtutorial-Part6 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="教程,Adventure_Creator"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Inventory Items进入Inventory manager，点击Create new item，Name命名为Instruction manual，将TutorialFiles——EvilLair——Set——Textures——BookIcon放到Main graphic里面 为了能够让物品栏中的物品可以与鼠标产生交互，还需要一些多余的设置，首先进入Menu manager，点击进入I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adventure-Creator-3Dtutorial-Part6">
+<meta property="og:url" content="http://example.com/2021/11/08/AdventureCreator/Adventure-Creator-3Dtutorial-Part6/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="Inventory Items进入Inventory manager，点击Create new item，Name命名为Instruction manual，将TutorialFiles——EvilLair——Set——Textures——BookIcon放到Main graphic里面 为了能够让物品栏中的物品可以与鼠标产生交互，还需要一些多余的设置，首先进入Menu manager，点击进入I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png">
+<meta property="article:published_time" content="2021-11-08T08:37:18.000Z">
+<meta property="article:modified_time" content="2021-12-11T08:17:08.000Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="Adventure_Creator">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/08/AdventureCreator/Adventure-Creator-3Dtutorial-Part6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Adventure-Creator-3Dtutorial-Part6',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-11 16:17:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Adventure-Creator-3Dtutorial-Part6</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-08T08:37:18.000Z" title="发表于 2021-11-08 16:37:18">2021-11-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-11T08:17:08.000Z" title="更新于 2021-12-11 16:17:08">2021-12-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Adventure-Creator/">Adventure Creator</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Adventure-Creator-3Dtutorial-Part6"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Inventory-Items"><a href="#Inventory-Items" class="headerlink" title="Inventory Items"></a>Inventory Items</h1><p>进入Inventory manager，点击Create new item，Name命名为Instruction manual，将TutorialFiles——EvilLair——Set——Textures——BookIcon放到Main graphic里面</p>
+<p>为了能够让物品栏中的物品可以与鼠标产生交互，还需要一些多余的设置，首先进入Menu manager，点击进入Inventory properties，取消勾选Ignore input</p>
+<p>然后在Assets文件夹当中选择Adventure Creator——Downloads——UI——WD_InventoryUI,在Inspector面板中的Canvas Group组件里勾选Interactable和Blocks Raycasts。因为这是基于Unity prefab的UI，所以有后面这一步。如果使用Adventure Creator作为Source的话直接取消勾选ignore input就可以了</p>
+<p>点击Inventory manager，选择Instruction manual，编辑Standard Interaction，首先点击Create生成一个USE的interaction，将其生成的文件放进My 3D Game——ActionLists里，然后将这个interaction拉取进Examine中共用</p>
+<p>双击Instructionmanual：Use 编辑</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211108200200659.png" alt="image-20211108200200659"></p>
+<p>将TutorialFiles——EvilLair——Set——Instructionmanual放到场景中的桌子上</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211109111423978.png" alt="image-20211109111423978"></p>
+<p>我们先将场景中的咖啡桌制作一个Hotspot，这个Hotspot直接使用添加组件的方式制作</p>
+<p>首先在hierarchy窗口选中Logic——Hotspots，然后右键——空对象——命名为Hotspot_Coffee table。然后向其中添加Hotspot组件，将其中的Label输入“咖啡桌”</p>
+<p>然后添加一个Capsule Collider，打开is trigger，半径设置为1.18，并将其移动到 X：-13.3、Y：1.25、Z：15.156 的位置（这个位置是这个Hotspot的Transform的位置，不是这个Collider单独的位置）。然后新建一个Walk to Marker，将其移动到 X：-13.275、Y：0.5、Z：13.148 的位置。</p>
+<p>点击进入SetGeometry——EvilLair——Coffee Table，添加Highlight组件，然后在Hotspot_Coffee table 中指定它为Highlight，然后点击添加USE interactions，Player action——Walk to marker，Face after moving-true，Create interaction-咖啡桌：USE</p>
+<p>在Scene manager里面新建一个GameCamera，命名为TableCam，并将其放在咖啡桌旁边，位置如下</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>-12.15</th>
+<th>2.23</th>
+<th>13.41</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rotation</td>
+<td>14.434</td>
+<td>-42.113</td>
+<td>-0.317</td>
+</tr>
+</tbody></table>
+<p>然后在Game Camera脚本里面，打开Follow cursor</p>
+<p>编辑Coffee Table：USE的interaction，我们先进入Hotspot Panel：USE的interaction，复制它的节点，然后回到Coffee Table：USE的interaction粘贴，我们把Camera Switch设为TableCam，把Hotspot disable设为Hotspot：Coffee Table。</p>
+<p>在hierarchy床口中的InstructionManual被选中的情况下，我们进入menu manager，点击一下Hotspot，然后在上方的Scene Prefabs里面勾选Position over selected mesh，输入名称Hotspot_Manual,点击新建即可。这个HotSpot比咖啡桌的Hotspot小，所以会像之前Panel内部的button一样被隐藏</p>
+<p>在Hotspot_Manual内部添加一个Highlight组件给自己。Label输入“手册”，新建USE interaction——Cursor&#x2F;icon-Use——创建Interaction。</p>
+<p>Ctrl+D复制一个TabelCam，然后更改一下如下表所示的位置，命名为ManualCam</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>-12.318</th>
+<th>1.893</th>
+<th>15.273</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rotation</td>
+<td>-0.149</td>
+<td>-149.56</td>
+<td>-2.377</td>
+</tr>
+</tbody></table>
+<p>点击EL_TinPot——rRobot——WheelPosition——Leg——Chest——Arm.L——Forearm.L——Hand.L——Hold.L，进入EL_TinPot的Inspector，将Hold.L放进Left hand里面。Override一下Prefab</p>
+<p>准备好这些之后，我们开始编辑Interaction——Hotspot_Manual:Use</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211109172356353.png" alt="image-20211109172356353"></p>
+<h1 id="ActionList-parameters"><a href="#ActionList-parameters" class="headerlink" title="ActionList parameters"></a>ActionList parameters</h1><p>在场景中，我们有两个CloseUp类的ActionList，一个是CloseUp_Panel，一个是CloseUp_Coffee table，这两个的流程都是切换摄像机——锁定Player——关闭Hotspot——激活Menu。实际游戏场景中，我们可能有非常多的相似的ActionList，都是同一套流程，为了化繁为简，我们可以将这个流程的ActionList放在Assets里面，跟随需要进行实例化，并配合ActionList parameters，也就是再造一个轮子。</p>
+<p>首先点击Hotspot_Panel:Use，在Inspector窗口中，点击Interaction Script右侧的菜单按钮，在弹出的窗口中选择Convert to ActionList asset，弹出窗口点确定，然后将生成的文件放到My 3D Game——ActionLists文件夹当中，将其重新命名为Generic_EnterCloseUp.</p>
+<p>双击打开Generic_EnterCloseUp，在ActionList编辑窗口中点击右下角的Properties，在画面右侧就会出现Asset properties窗口，勾选Use parameters，点击Create new parameter两次，Label分别是Camera to Switch和Hotspot to disable，Type 都是gameobject。</p>
+<p>这时候改变一下Camera：Switch节点和Hotspot：Enable or disable节点，让他们引用parameter，而不是场景中的对象</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211110113029782.png" alt="image-20211110113029782"></p>
+<p>点击hierarchy中的Hotspot_Panel:Use，在inspector窗口中将Actions source改为In scene，然后删掉里面的节点，更换为</p>
+<ol start="0">
+<li>ActionList：Run——Source-Asset File——ActionList asset-Generic_EnterCloseUp——Run mode-Set Parameter And Run——Camera to Switch-PanelCam——Hotspot to disable-Hotspot_Panel</li>
+</ol>
+<p>相似地，我们需要把咖啡桌：USE这个interaction也修改了</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211110141544164.png" alt="image-20211110141544164"></p>
+<p>因为每次我们点击退出CloseUp的Exit按钮时，先前的摄像机都不一样，所以我们也需要把 CloseUp_Button_CloseUp_OnClick这个ActionList设定参数</p>
+<p>这里和上面的过程相似，因为这个actionlist是在文件夹里面的，所以直接生成两个parameter，一个是Camera to Switch，一个是Hotspot to enable，然后更改相应的节点。</p>
+<p>然后再双击打开Generic_EnterCloseUp，首先新建一个parameter，命名为Camera to cut after，type依然是GameObject，然后新建两个节点如下图所示</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211110150240739.png" alt="image-20211110150240739"></p>
+<p>然后回到Hotspot Panel：USE这个interaction，把NavCam1拉进Camera to cut after，回到Coffee table：USE这个Interaction，把NavCam Platform拉进去</p>
+<p>重新命名CloseUp_Button_CloseUp_OnClick为Generic_ExitCloseUp.</p>
+<h1 id="Inventory-Actions"><a href="#Inventory-Actions" class="headerlink" title="Inventory Actions"></a>Inventory Actions</h1><p>我们接下来要做整个解谜最后的部分。让主角机器人用拿到的InstructionManual拍击Panel，来让LaserGun关闭</p>
+<p>首先我们要把主角拿InstructionManual和放下InstructionManual的动作做成一个Cutscene。因为这个动作总是重复调用，这样做更加方便</p>
+<p>在scene manager里面新建Cutscene，命名为Manual_Hold,打开它的actonlist</p>
+<ol start="0">
+<li>Object :Visibility——Object to affect-InstructionManual——Visibility-Visible</li>
+<li>Character：Hold object——Is Player-true——Object to hold——InstructionManual</li>
+</ol>
+<p>Ctrl+D复制这个Cutscene，命名为Manual_Hide,编辑actionlist</p>
+<ol start="0">
+<li>Object :Visibility——Object to affect-InstructionManual——Visibility-Invisible</li>
+<li>Object：Set parent——Object to affect-InstructionManual——Method-Clear Parent</li>
+</ol>
+<p>点击进入Hotspot_Manual:Use的Interaction，删掉Character：Hold Object节点，直接在上方的Camera：Switch后的After running选择Run cutscene-Manual_Hold</p>
+<p>然后再删掉Object：Visibility节点，在此节点链最后的Camera：Switch中，After running选择Run cutscene-Manual_Hide</p>
+<p>点击Hotspot_Buttons，在inspector窗口中点击新建Inventory Interactions，点击Create interaction</p>
+<p>在编辑这个interaction之前，先打开Variables manager，新建一个Global variable，Label中命名为Turned Laser off</p>
+<p>编辑	按钮：Instruction manual</p>
+<ol start="0">
+<li>ActionList：Run——ActionList-Manual_Hold</li>
+<li>Character:Animate——Is Player-true——Method：Play Custom——Clip name-rRobot|Robot_SlamPanel——Wait until finish-true</li>
+<li>Camera：Switch——New camera-RevealCam</li>
+<li>Object：Animate——Animation engine-Mecanim——Animator-LaserGun——Parameter to affect-State——Parameter type-Int——Set as value-3</li>
+<li>Engine：Wait——Wait time-2</li>
+<li>Camera：Switch——New camera-TalkCam</li>
+<li>Dialogue：Playspeech——Speaker-EL Brain——Line text-哦……终于停下来了</li>
+<li>Variable：Set——Statement-true</li>
+<li>Camera：Switch——Return to last gameplay-true</li>
+<li>Hotspot：Change interaction——Hotspot to change-Hotspot_Buttons——Interaction to change-Inventory——Change to make-Disable——After running-run cutscene——Cutscene to run-Manual_Hide</li>
+</ol>
+<p>编辑——手柄：USE</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211110165819093.png" alt="image-20211110165819093"></p>
+<p>编辑——Brain：Talk to</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20211110170610586.png" alt="image-20211110170610586"></p>
+<h1 id="Saving"><a href="#Saving" class="headerlink" title="Saving"></a>Saving</h1><p>打开File——Build Settings，然后将当前场景放进Build里面</p>
+<p>然后打开Settings manager，点击Auto add Save components to gameObjects</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/08/AdventureCreator/Adventure-Creator-3Dtutorial-Part6/">http://example.com/2021/11/08/AdventureCreator/Adventure-Creator-3Dtutorial-Part6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/Adventure-Creator/">Adventure_Creator</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/11/my-blog-note/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">建站流程笔记</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/05/AdventureCreator/Adventure-Creator-3Dtutorial-Part5/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Adventure-Creator-3Dtutorial-Part5</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/10/14/AdventureCreator/Adventure-Creator-2Dtutorial-Part3/" title="Adventure-Creator-2Dtutorial-Part3"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-14</div><div class="title">Adventure-Creator-2Dtutorial-Part3</div></div></a></div><div><a href="/2021/10/15/AdventureCreator/Adventure-Creator-2Dtutorial-Part4/" title="Adventure-Creator-2Dtutorial-Part4"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-15</div><div class="title">Adventure-Creator-2Dtutorial-Part4</div></div></a></div><div><a href="/2021/10/10/AdventureCreator/Adventure-Creator-2Dtutorial-Part1/" title="Adventure_Creator_2Dtutorial_Part1"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-10</div><div class="title">Adventure_Creator_2Dtutorial_Part1</div></div></a></div><div><a href="/2021/10/12/AdventureCreator/Adventure-Creator-2Dtutorial-Part2/" title="Adventure_Creator_2Dtutorial_Part2"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-12</div><div class="title">Adventure_Creator_2Dtutorial_Part2</div></div></a></div><div><a href="/2021/10/22/AdventureCreator/Adventure-Creator-3Dtutorial-Part1/" title="Adventure-Creator-3Dtutorial-Part1"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-22</div><div class="title">Adventure-Creator-3Dtutorial-Part1</div></div></a></div><div><a href="/2021/11/03/AdventureCreator/Adventure-Creator-3Dtutorial-Part4/" title="Adventure-Creator-3Dtutorial-Part4"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-03</div><div class="title">Adventure-Creator-3Dtutorial-Part4</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Inventory-Items"><span class="toc-number">1.</span> <span class="toc-text">Inventory Items</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ActionList-parameters"><span class="toc-number">2.</span> <span class="toc-text">ActionList parameters</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Inventory-Actions"><span class="toc-number">3.</span> <span class="toc-text">Inventory Actions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Saving"><span class="toc-number">4.</span> <span class="toc-text">Saving</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/20/hello-world/" title="Hello World"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/05/20/hello-world/" title="Hello World">Hello World</a><time datetime="2022-05-20T01:08:11.990Z" title="发表于 2022-05-20 09:08:11">2022-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/19/UnityBook/Unity-Book-Chapter12Part3/" title="自动打包"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动打包"/></a><div class="content"><a class="title" href="/2022/05/19/UnityBook/Unity-Book-Chapter12Part3/" title="自动打包">自动打包</a><time datetime="2022-05-19T08:02:52.000Z" title="发表于 2022-05-19 16:02:52">2022-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/16/UnityBook/Unity-Book-Chapter12Part2/" title="配置错误"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="配置错误"/></a><div class="content"><a class="title" href="/2022/05/16/UnityBook/Unity-Book-Chapter12Part2/" title="配置错误">配置错误</a><time datetime="2022-05-16T03:34:47.000Z" title="发表于 2022-05-16 11:34:47">2022-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/UnityBook/Unity-Book-Chapter12Part1/" title="资源导入"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="资源导入"/></a><div class="content"><a class="title" href="/2022/05/11/UnityBook/Unity-Book-Chapter12Part1/" title="资源导入">资源导入</a><time datetime="2022-05-11T09:04:07.000Z" title="发表于 2022-05-11 17:04:07">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/09/UnityBook/Unity-Book-Chapter11Part6/" title="资源管理实例"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="资源管理实例"/></a><div class="content"><a class="title" href="/2022/05/09/UnityBook/Unity-Book-Chapter11Part6/" title="资源管理实例">资源管理实例</a><time datetime="2022-05-09T02:03:16.000Z" title="发表于 2022-05-09 10:03:16">2022-05-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
