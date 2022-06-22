@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Unity四元数和向量相乘作用及其运算规则 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="Tips,Unity"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="作用：四元数和向量相乘表示这个向量按照这个四元数进行旋转之后得到的新的向量。 Unity - Scripting API: Quaternion.operator * (unity3d.com) 比如：向量vector3(0,0,10)，绕着Y轴旋转90度，得到新的向量是vector3(10,0,0)。 在unity中表示为： 123456789101112using UnityEngine;pu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity四元数和向量相乘作用及其运算规则">
+<meta property="og:url" content="http://example.com/2022/06/18/UnityTip/Unity-tips1/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="作用：四元数和向量相乘表示这个向量按照这个四元数进行旋转之后得到的新的向量。 Unity - Scripting API: Quaternion.operator * (unity3d.com) 比如：向量vector3(0,0,10)，绕着Y轴旋转90度，得到新的向量是vector3(10,0,0)。 在unity中表示为： 123456789101112using UnityEngine;pu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity_2021.jpg">
+<meta property="article:published_time" content="2022-06-18T09:03:33.000Z">
+<meta property="article:modified_time" content="2022-06-19T02:24:58.998Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="Tips">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity_2021.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/18/UnityTip/Unity-tips1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity四元数和向量相乘作用及其运算规则',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-06-19 10:24:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity_2021.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity四元数和向量相乘作用及其运算规则</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-18T09:03:33.000Z" title="发表于 2022-06-18 17:03:33">2022-06-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-19T02:24:58.998Z" title="更新于 2022-06-19 10:24:58">2022-06-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity%E7%9F%A5%E8%AF%86/">Unity知识</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity%E7%9F%A5%E8%AF%86/UnityTips/">UnityTips</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity四元数和向量相乘作用及其运算规则"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>作用：四元数和向量相乘表示这个向量按照这个四元数进行旋转之后得到的新的向量。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/Quaternion-operator_multiply.html">Unity - Scripting API: Quaternion.operator * (unity3d.com)</a></p>
+<p>比如：向量vector3(0,0,10)，绕着Y轴旋转90度，得到新的向量是vector3(10,0,0)。</p>
+<p>在unity中表示为：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">QuaternionMultVector</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 v = <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">        Quaternion q = Quaternion.Euler(<span class="number">0</span>, <span class="number">90</span>, <span class="number">0</span>);</span><br><span class="line">        Vector3 nv = q * v; <span class="comment">// Quaternion必须在Vector前面乘，因为只有Quaternion重载了*运算符</span></span><br><span class="line">        Debug.Log(nv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20220618171951609.png" alt="输出结果"></p>
+<p>复合旋转就是四元数依次相乘，最后乘以向量</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">QuaternionMultVector</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Transform target = <span class="keyword">new</span> GameObject(<span class="string">&quot;TestTarget&quot;</span>).transform;</span><br><span class="line">        Transform b = <span class="keyword">new</span> GameObject(<span class="string">&quot;B_GameObject&quot;</span>).transform;</span><br><span class="line">        b.position = <span class="keyword">new</span> Vector3(<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.物体的正前方10米的位置点</span></span><br><span class="line">        target.position = transform.position + Vector3.forward * <span class="number">10f</span>;</span><br><span class="line">        Debug.DrawRay(target.position, Vector3.up, Color.blue, <span class="number">100f</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.物体前方世界坐标系Y轴45度，10米位置的坐标点</span></span><br><span class="line">        Quaternion q = Quaternion.Euler(<span class="number">0</span>, <span class="number">45</span>, <span class="number">0</span>);</span><br><span class="line">        Vector3 v = q * Vector3.forward * <span class="number">10f</span>;</span><br><span class="line">        target.position = transform.position + v;</span><br><span class="line">        Debug.DrawRay(target.position, Vector3.up, Color.red, <span class="number">100f</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.物体到B点方向，10米位置的坐标点</span></span><br><span class="line">        Vector3 dir = b.position - transform.position;</span><br><span class="line">        Quaternion q2 = Quaternion.LookRotation(dir);</span><br><span class="line">        target.position = transform.position + q2 * Vector3.forward * <span class="number">10f</span>;</span><br><span class="line">        <span class="comment">//target.position = dir.normalized * 10 + transform.position; 与上述结果等价，dir.normalized = q2 * Vector3.forward</span></span><br><span class="line">        Debug.DrawRay(target.position, target.up, Color.green, <span class="number">100f</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.物体到B点方向Y轴偏移45度，10米位置的坐标点</span></span><br><span class="line">        target.position = transform.position + q * q2 * Vector3.forward * <span class="number">10f</span>;<span class="comment">//Quaternion之间也可以相乘</span></span><br><span class="line">        Debug.DrawRay(target.position, target.up, Color.yellow, <span class="number">100f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20220618225711179.png" alt="结果"></p>
+<p><strong>想了解其中的运算过程的可以往下看。</strong></p>
+<p>将四元数的四个值分别计为：（w,x,y,z），<em>unity中的四元数中的四个数字是（x,y,z,w），不影响下面的计算过程。</em></p>
+<p>绕任意轴旋转任意角度的四元数为：</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/20180916155701123.png" alt="四元数旋转"></p>
+<p>Y轴向量为（0,1,0）</p>
+<p>那么绕着Y轴旋转90度的四元数就是**q &#x3D; (√2&#x2F;2 , 0 ， √2&#x2F;2 ， 0)**；</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">QuaternionMultVector</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 v = <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">        Quaternion q = Quaternion.Euler(<span class="number">0</span>, <span class="number">90</span>, <span class="number">0</span>);</span><br><span class="line">        Vector3 nv = q * v; <span class="comment">// Quaternion必须在Vector前面乘，因为只有Quaternion重载了*运算符</span></span><br><span class="line">        Debug.Log(nv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>（<em>unity中这个Quaternion.Euler(0,90,0)打debug的话是（0，√2&#x2F;2 , 0 ， √2&#x2F;2 ），因为排列顺序是（x,y,z,w），不影响下面的计算过程</em>）</p>
+</blockquote>
+<p>四元数乘以向量的运算规则为：q * v &#x3D; （q） *（ v） *（ q−1）；</p>
+<p>其中：</p>
+<p>q &#x3D; (√2&#x2F;2 , 0 ， √2&#x2F;2 ， 0)；</p>
+<p>v，将v向量扩充为四元数（0，v）,也就是v &#x3D; （0 , 0，0 , 10）；</p>
+<p>q−1是四元数q的逆，求逆过程如下：</p>
+<p>共轭四元数：q*&#x3D;(w,-x,-y,-z)，也就是（√2&#x2F;2 , 0 ， -√2&#x2F;2 ， 0）<br>四元数的模：N(q) &#x3D; √(x^2 + y^2 + z^2 +w^2)，即四元数到原点的距离，计算结果为1<br>四元数的逆：q−1&#x3D;q*&#x2F;N(q)，也就是q−1 &#x3D; （√2&#x2F;2 , 0 ， -√2&#x2F;2 ， 0）<br>q * v &#x3D; q * v * q−1 &#x3D; (√2&#x2F;2 , 0 ， √2&#x2F;2 ， 0) * （0 , 0，0 , 10）*（√2&#x2F;2 , 0 ， -√2&#x2F;2 ， 0）；</p>
+<p>四元数乘法公式：</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/20180916163340910.png" alt="四元数叉乘"></p>
+<p>按照上述计算公式： q * v &#x3D; q * v * q−1</p>
+<p> (√2&#x2F;2 , 0 ， √2&#x2F;2 ， 0) * （0 , 0，0 , 10） &#x3D; （0,5√2，0，5√2）</p>
+<p>（0,5√2，0，5√2） * （√2&#x2F;2 , 0 ， -√2&#x2F;2 ， 0）&#x3D;（0,10,0,0）；</p>
+<p>将最后得到的四元数（0,10,0,0）变为向量（0，newV），就是newV（10,0,0）。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/06/18/UnityTip/Unity-tips1/">http://example.com/2022/06/18/UnityTip/Unity-tips1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Tips/">Tips</a><a class="post-meta__tags" href="/tags/Unity/">Unity</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity_2021.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/19/UnityBook/Unity-Book-Chapter13Part5/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">3D开发实战技巧</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/17/CSharp/Csharp-tips4/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C# 枚举的位运算</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/19/UnityBook/Unity-Book-Chapter13Part5/" title="3D开发实战技巧"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="3D开发实战技巧"/></a><div class="content"><a class="title" href="/2022/06/19/UnityBook/Unity-Book-Chapter13Part5/" title="3D开发实战技巧">3D开发实战技巧</a><time datetime="2022-06-19T13:25:54.000Z" title="发表于 2022-06-19 21:25:54">2022-06-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/18/UnityTip/Unity-tips1/" title="Unity四元数和向量相乘作用及其运算规则"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity_2021.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity四元数和向量相乘作用及其运算规则"/></a><div class="content"><a class="title" href="/2022/06/18/UnityTip/Unity-tips1/" title="Unity四元数和向量相乘作用及其运算规则">Unity四元数和向量相乘作用及其运算规则</a><time datetime="2022-06-18T09:03:33.000Z" title="发表于 2022-06-18 17:03:33">2022-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/17/CSharp/Csharp-tips4/" title="C# 枚举的位运算"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C# 枚举的位运算"/></a><div class="content"><a class="title" href="/2022/06/17/CSharp/Csharp-tips4/" title="C# 枚举的位运算">C# 枚举的位运算</a><time datetime="2022-06-17T12:15:51.000Z" title="发表于 2022-06-17 20:15:51">2022-06-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/15/UnityBook/Unity-Book-Chapter13Part4/" title="输入事件和物理碰撞"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="输入事件和物理碰撞"/></a><div class="content"><a class="title" href="/2022/06/15/UnityBook/Unity-Book-Chapter13Part4/" title="输入事件和物理碰撞">输入事件和物理碰撞</a><time datetime="2022-06-15T06:37:03.000Z" title="发表于 2022-06-15 14:37:03">2022-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/14/UnityBook/Unity-Book-Chapter13Part3/" title="场景管理"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-Xuanyusong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="场景管理"/></a><div class="content"><a class="title" href="/2022/06/14/UnityBook/Unity-Book-Chapter13Part3/" title="场景管理">场景管理</a><time datetime="2022-06-14T04:35:16.000Z" title="发表于 2022-06-14 12:35:16">2022-06-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
