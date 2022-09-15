@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>开枪实现图与填弹实现图 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="教程,游戏框架搭建"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="在这一节中我们梳理枪械系统的各种功能需求，然后绘制枪械系统的功能实现图    名称 形象 子弹 弹夹容量 攻击力 频率 射程&#x2F;范围 限制 换弹时间 描述    手枪   7 1 1发&#x2F;秒 半屏 无限 3秒 默认枪   冲锋枪   30 1 6发&#x2F;秒 2&#x2F;3屏幕 需要弹药 3秒 无   步枪   50 3 3发&#x2F;秒 1屏 需要弹药 1秒 有一定后坐力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开枪实现图与填弹实现图">
+<meta property="og:url" content="http://example.com/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="在这一节中我们梳理枪械系统的各种功能需求，然后绘制枪械系统的功能实现图    名称 形象 子弹 弹夹容量 攻击力 频率 射程&#x2F;范围 限制 换弹时间 描述    手枪   7 1 1发&#x2F;秒 半屏 无限 3秒 默认枪   冲锋枪   30 1 6发&#x2F;秒 2&#x2F;3屏幕 需要弹药 3秒 无   步枪   50 3 3发&#x2F;秒 1屏 需要弹药 1秒 有一定后坐力">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg">
+<meta property="article:published_time" content="2022-09-13T01:46:54.000Z">
+<meta property="article:modified_time" content="2022-09-13T03:10:33.523Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="游戏框架搭建">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '开枪实现图与填弹实现图',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-13 11:10:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">开枪实现图与填弹实现图</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-13T01:46:54.000Z" title="发表于 2022-09-13 09:46:54">2022-09-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-13T03:10:33.523Z" title="更新于 2022-09-13 11:10:33">2022-09-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="开枪实现图与填弹实现图"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在这一节中我们梳理枪械系统的各种功能需求，然后绘制枪械系统的功能实现图</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>形象</th>
+<th>子弹</th>
+<th>弹夹容量</th>
+<th>攻击力</th>
+<th>频率</th>
+<th>射程&#x2F;范围</th>
+<th>限制</th>
+<th>换弹时间</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手枪</td>
+<td></td>
+<td></td>
+<td>7</td>
+<td>1</td>
+<td>1发&#x2F;秒</td>
+<td>半屏</td>
+<td>无限</td>
+<td>3秒</td>
+<td>默认枪</td>
+</tr>
+<tr>
+<td>冲锋枪</td>
+<td></td>
+<td></td>
+<td>30</td>
+<td>1</td>
+<td>6发&#x2F;秒</td>
+<td>2&#x2F;3屏幕</td>
+<td>需要弹药</td>
+<td>3秒</td>
+<td>无</td>
+</tr>
+<tr>
+<td>步枪</td>
+<td></td>
+<td></td>
+<td>50</td>
+<td>3</td>
+<td>3发&#x2F;秒</td>
+<td>1屏</td>
+<td>需要弹药</td>
+<td>1秒</td>
+<td>有一定后坐力</td>
+</tr>
+<tr>
+<td>狙击枪</td>
+<td></td>
+<td></td>
+<td>12</td>
+<td>6</td>
+<td>1发&#x2F;秒</td>
+<td>1屏</td>
+<td>需要弹药</td>
+<td>5秒</td>
+<td>红外瞄准+后坐力大</td>
+</tr>
+<tr>
+<td>火箭筒</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>5</td>
+<td>1发&#x2F;秒</td>
+<td>1屏</td>
+<td>需要弹药</td>
+<td>4秒</td>
+<td>跟踪+爆炸</td>
+</tr>
+<tr>
+<td>霰弹枪</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1发&#x2F;秒</td>
+<td>半屏</td>
+<td>需要弹药</td>
+<td>1秒</td>
+<td>一次发射6~12颗子弹</td>
+</tr>
+</tbody></table>
+<p>对于枪械系统，我们在表现层有两个地方需要展示枪械系统的数据，一个是UI界面，一个是角色形象</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20220913095109402.png" alt="枪械表现层"></p>
+<p>除了这两个比较明显的需求之外，还有一些隐性的功能需求，比如能不能开枪的判断，这个需要根据弹药量进行计算，再比如开枪之后发射什么样的子弹，具体怎么发射，子弹打中敌人怎么样没打中敌人怎么样，这些功能点都是枪械表现层的需求。</p>
+<p>大致的需求如下：</p>
+<ul>
+<li>界面显示枪械信息</li>
+<li>主角手持枪械对象<ul>
+<li>形象</li>
+<li>开枪逻辑、攻击力计算等</li>
+</ul>
+</li>
+</ul>
+<p>我们可以把不同的枪械的功能和形象都做成Prefab，然后这些Prefab上都挂上各自的脚本，让这些脚本都继承共同的父类（<code>GunController</code>），相同的逻辑在父类实现，不同的逻辑在子类通过override方式定制。</p>
+<p>这里设计的逻辑就是很简单的表现层逻辑，到时候写就可以了。在纸上设计阶段，我们的重点是要把<strong>数据层</strong>逻辑理清楚，如果整个项目都在纸上设计，对设计者的要求太高。如果想锻炼能力，可以在纸上设计表现层的逻辑，这样节省很多纠结的时间。</p>
+<p>我们在之前绘制过开枪功能的草图</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20220905185803980.png" alt="开枪功能草图"></p>
+<p>我们的<code>GunInfo</code>需要更多的枪械状态来描述，比如填弹状态，射击状态，冷却状态（枪械开枪频率），还需要有一些数据，比如枪械名字，枪械名字其实就是类型，我们需要通过枪械名字去查询一些数据，比如开枪频率、填弹时间等。</p>
+<p>当没有子弹的时候，我们可以进行填弹，填弹时机可以是开完一枪后枪内没有子弹的话自动进行，也可以是玩家再次按下开枪之后判断有没有子弹，没有子弹再进行，在这里我们使用前者。除此之外玩家可以通过按R键提前填弹。</p>
+<p>总结之后我们的功能实现图如下</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20220913110424784.png" alt="开枪与填弹纸上设计"></p>
+<p>功能实现图虽然不能完全绘制出具体的实现细节，但是已经帮我们节省很多编码时的工作量了，比如命名、数据结构设计等工作。</p>
+<p>后续枪械系统相关的功能实现图都绘制好之后，会再进行一次检查工作。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/">http://example.com/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/">游戏框架搭建</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note15/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">换枪、捡枪、弹药补给功能图绘制</div></div></a></div><div class="next-post pull-right"><a href="/2022/09/12/ATAOFrameWork/FrameWork-Season2Note13/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">枪械系统需求初步分析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/27/ATAOFrameWork/FrameWork-Season1Note1/" title="对象之间的交互与模块化"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-27</div><div class="title">对象之间的交互与模块化</div></div></a></div><div><a href="/2022/07/02/ATAOFrameWork/FrameWork-Season1Note2/" title="表现和数据分离"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-02</div><div class="title">表现和数据分离</div></div></a></div><div><a href="/2022/07/05/ATAOFrameWork/FrameWork-Season1Note3/" title="交互和表现、BindableProperty"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">交互和表现、BindableProperty</div></div></a></div><div><a href="/2022/07/09/ATAOFrameWork/FrameWork-Season1Note4/" title="Command"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-09</div><div class="title">Command</div></div></a></div><div><a href="/2022/07/14/ATAOFrameWork/FrameWork-Season1Note5/" title="模块化-引入单例和IOC容器"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-14</div><div class="title">模块化-引入单例和IOC容器</div></div></a></div><div><a href="/2022/07/18/ATAOFrameWork/FrameWork-Season1Note7/" title="解决递归调用、补丁重新构造"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-18</div><div class="title">解决递归调用、补丁重新构造</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note18/" title="开枪底层实现与枪械信息展示"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开枪底层实现与枪械信息展示"/></a><div class="content"><a class="title" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note18/" title="开枪底层实现与枪械信息展示">开枪底层实现与枪械信息展示</a><time datetime="2022-09-15T03:04:45.000Z" title="发表于 2022-09-15 11:04:45">2022-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note17/" title="GunInfo重构"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GunInfo重构"/></a><div class="content"><a class="title" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note17/" title="GunInfo重构">GunInfo重构</a><time datetime="2022-09-15T01:22:42.000Z" title="发表于 2022-09-15 09:22:42">2022-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/14/ATAOFrameWork/FrameWork-Season2Note16/" title="贫血、充血模型实践说明"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="贫血、充血模型实践说明"/></a><div class="content"><a class="title" href="/2022/09/14/ATAOFrameWork/FrameWork-Season2Note16/" title="贫血、充血模型实践说明">贫血、充血模型实践说明</a><time datetime="2022-09-14T03:24:31.000Z" title="发表于 2022-09-14 11:24:31">2022-09-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note15/" title="换枪、捡枪、弹药补给功能图绘制"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="换枪、捡枪、弹药补给功能图绘制"/></a><div class="content"><a class="title" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note15/" title="换枪、捡枪、弹药补给功能图绘制">换枪、捡枪、弹药补给功能图绘制</a><time datetime="2022-09-13T08:01:11.000Z" title="发表于 2022-09-13 16:01:11">2022-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/" title="开枪实现图与填弹实现图"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开枪实现图与填弹实现图"/></a><div class="content"><a class="title" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/" title="开枪实现图与填弹实现图">开枪实现图与填弹实现图</a><time datetime="2022-09-13T01:46:54.000Z" title="发表于 2022-09-13 09:46:54">2022-09-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
