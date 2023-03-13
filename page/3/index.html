@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-11-11 15:57:02'
+  postUpdate: '2023-03-13 22:37:49'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,241 +137,121 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">161</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">38</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ATAO2017,阿宅创造奇迹！</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/27/ATAOFrameWork/FrameWork-Season2Note34/" title="绘制主角"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="绘制主角"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/27/ATAOFrameWork/FrameWork-Season2Note34/" title="绘制主角">绘制主角</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-27T02:37:44.000Z" title="发表于 2022-10-27 10:37:44">2022-10-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">在这一节，实现绘制主角的功能。
-笔刷显示逻辑修改LevelEditor脚本，在其中新建一个枚举，用于存储笔刷类型
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556using System;using UnityEngine;namespace ShootingEditor2D&#123;    public class LevelEditor : MonoBehaviour    &#123;        //...        public enum BrushType        &#123;            Ground,            Player        &#125;        BrushType mCurrentBrushType = BrushType.Ground;        //...        Lazy&lt;GUIStyle&gt; mRightButtonStyle = ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/26/Shortcuts/" title="各种快捷键"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Photoshop-CC-2020.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种快捷键"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/26/Shortcuts/" title="各种快捷键">各种快捷键</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-26T12:57:47.000Z" title="发表于 2022-10-26 20:57:47">2022-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/PhotoShop/">PhotoShop</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/PhotoShop/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a></span></div><div class="content">腹灵FL980快捷键Fn组合键功能
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">189</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">47</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ATAO2017,阿宅创造奇迹！</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/02/16/UnityDOTS/UnityDOTS-Part2/" title="DOTS1.0使用：Aspect、RandomSingleton"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOTS1.0使用：Aspect、RandomSingleton"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/16/UnityDOTS/UnityDOTS-Part2/" title="DOTS1.0使用：Aspect、RandomSingleton">DOTS1.0使用：Aspect、RandomSingleton</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-16T07:17:23.000Z" title="发表于 2023-02-16 15:17:23">2023-02-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Unity-DOTS/">Unity DOTS</a></span></div><div class="content">添加ASpectQuery联合查询接上一节，我们需要应用之前创建的Speed Component，可以这样写代码
+MovingSystemBase：
+123456789101112131415161718192021using Unity.Entities;using Unity.Transforms;using Unity.Mathematics;public partial class MovingSystemBase : SystemBase&#123;    protected override void OnUpdate()    &#123;        foreach ((TransformAspect transformAspect,Speed speed) in SystemAPI.Query&lt;TransformAspect,Speed&gt;())        &#123;            transformAspect.LocalPosition += new float3(SystemAPI.Time.DeltaTime * speed.valu ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/02/14/UnityDOTS/UnityDOTS-Part1/" title="DOTS1.0使用：E、C、S创建"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOTS1.0使用：E、C、S创建"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/14/UnityDOTS/UnityDOTS-Part1/" title="DOTS1.0使用：E、C、S创建">DOTS1.0使用：E、C、S创建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-14T08:21:14.000Z" title="发表于 2023-02-14 16:21:14">2023-02-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Unity-DOTS/">Unity DOTS</a></span></div><div class="content">DOTS1.0发布了，记录一下它的简单使用。
+笔记基于：Unity DOTS 1.0 in 60 MINUTES! - YouTube、Spawner example | Entities | 1.0.0-pre.44 (unity3d.com)
+相关链接：Unity ECS 1.0 Full Project Tutorial | Step-by-Step 🧟‍♂️ - YouTube
+官方的例子：Unity-Technologies&#x2F;EntityComponentSystemSamples (github.com)
+准备Unity需要2022版本，新建一个3D URP项目，打开Package Manager窗口，点击左上角的加号，再点击“add package by name”，输入“com.unity.entities”回车，等待Unity自动安装。在写此笔记时，DOTS虽然已经是1.0，但还是preview（记住打开Package Manager的允许预览包）。所有的依赖也会安装。
 
+再次重复步骤，输入“com.unity.entities.graphics”，安装基 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/02/14/UnityShaderIntro/UnityShaderIntro-Chapter3Part2/" title="Unity Shader的结构"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity Shader的结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/14/UnityShaderIntro/UnityShaderIntro-Chapter3Part2/" title="Unity Shader的结构">Unity Shader的结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-14T05:59:41.000Z" title="发表于 2023-02-14 13:59:41">2023-02-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/">UnityShader入门精要</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/UnityShader%E5%9F%BA%E7%A1%80/">UnityShader基础</a></span></div><div class="content">一个Unity Shader的基础结构如下所示：
+123456789101112Shader &quot;ShaderName&quot;&#123;	Properties&#123;	//属性	&#125;	SubShader&#123;	//显卡A使用的子着色器	&#125;	SubShader&#123;	//显卡B使用的子着色器	&#125;	Fallback&quot;VertexLit&quot;&#125;
 
-组合键
-功能
+Unity会根据目标平台来把这些结构编译成真正的代码和Shader文件。
+Shader名每一个Unity Shader文件的第一行都需要通过“Shader”语义来指定该Unity Shader的名字。
+1Shader&quot;Custom/MyShader&quot;&#123; &#125;
 
 
+PropertiesProperties语义块中包含了一系列属性（Property）这些属性将会出现在材质面板中。
+Properties语义块定义：
+12345Properties&#123;	Name &#123;&quot;display name&quot;,Pr ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter3Part1/" title="Unity Shader概述"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity Shader概述"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter3Part1/" title="Unity Shader概述">Unity Shader概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-13T12:59:36.000Z" title="发表于 2023-02-13 20:59:36">2023-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/">UnityShader入门精要</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/UnityShader%E5%9F%BA%E7%A1%80/">UnityShader基础</a></span></div><div class="content">没有Unity这类编辑器的情况下，原生Shader的设置可能是这样的（伪代码）：
+12345678910111213141516171819202122232425262728void Initialization()&#123;    //从硬盘上加载顶点着色器代码    string vertexShaderCode = LoadShaderFromFile(VertexShader.shader);    //从硬盘上加载片元着色器代码    string fragmentShaderCode = LoadShaderFromFile(FragmentShader.shader);    //把顶点着色器加载到GPU中    LoadVertexShaderFromString(vertexShaderCode);    //把片元着色器加载到GPU中    LoadFragmentShaderFromString(fragmentShaderCode);        //设置顶点着色器中定义的“vertexPosition”属性，vertices即模型顶点坐标    SetV ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter2Part2/" title="渲染流水线笔记2"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渲染流水线笔记2"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter2Part2/" title="渲染流水线笔记2">渲染流水线笔记2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-13T08:53:17.000Z" title="发表于 2023-02-13 16:53:17">2023-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/">UnityShader入门精要</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/%E6%B8%B2%E6%9F%93%E6%B5%81%E6%B0%B4%E7%BA%BF/">渲染流水线</a></span></div><div class="content">3D应用、OpenGL&#x2F;DirectX、显卡驱动的关系
+什么是HLSL、GLSL、Cg这些都是高级着色语言（Shading Language）。
+DirectX——HLSL（High Level Shading Language）：支持它的平台多是微软自己的产品，在相同版本下编译结果是一样的
+OpenGL——GLSL（OpenGL Shading Language）：由显卡驱动来完成着色器编译，GLSL依赖硬件提供商，可能会造成编译结果不一致的情况。
+Nvidia——Cg（C for Language）：真正意义的跨平台，语法和HLSL很像，可能无法完全发挥出OpenGL的最新特性。
+这些语言称为“高级”语言是相对汇编语言来说的，而不是像C#相对于C的高级那样。这些语言会被编译成与机器无关的汇编语言，被称为中间语言（Intermediate Language，IL），中间语言再交给显卡驱动来翻译成真正的机器语言。
+在Unity中可以选择使用“Cg&#x2F;HLSL”或者“GLSL”，Unity的着色语言和它们语法几乎一样，但是有一些不支持和不一样的地方。
+DrawCallD ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/02/12/UnityShaderIntro/UnityShaderIntro-Chapter2Part1/" title="渲染流水线笔记"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渲染流水线笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/12/UnityShaderIntro/UnityShaderIntro-Chapter2Part1/" title="渲染流水线笔记">渲染流水线笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-12T03:39:21.000Z" title="发表于 2023-02-12 11:39:21">2023-02-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/">UnityShader入门精要</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/%E6%B8%B2%E6%9F%93%E6%B5%81%E6%B0%B4%E7%BA%BF/">渲染流水线</a></span></div><div class="content">综述在理论上，一个渲染流程分3个阶段：
 
-Fn+Esc
-长按2秒恢复出厂
 
+应用阶段
 
-Fn+Win键
-同锁住左Win和APP（IOS、MAC系统下自动解锁）
+应用阶段就是各种3D软件游戏等，在此阶段还有一个剔除（culling）工作，把不可见的剔除出去。在这一阶段设置模型的渲染状态（每个模型的材质、纹理、Shader）。并且在这一阶段还要输出渲染所需的几何信息，即渲染图元（rendering primitives）。渲染图元可以是点、线、三角面。
 
+几何阶段
 
-Fn+右Ctrl
-切换灯光模式
+几何阶段和后面的光栅化阶段都属于GPU流水线阶段，几何阶段的一个重要目的就是将顶点坐标转换到屏幕空间中，每个顶点还包含着深度值、着色等相关信息。
 
+光栅化阶段
 
-Fn+右Shift
-切换灯光颜色
+使用几何阶段产生的数据来产生屏幕上的像素，在这一阶段决定渲染图元中的哪些像素应该被绘制在屏幕上，对几何阶段得到的逐顶点数据进行插值（包括纹理坐标信息，顶点颜色信息），然后再进行逐像素处理。
+CPU和GPU之间的通信渲染流水线的起点是CPU，即应用阶段，此时CPU要干的事是：
 
+把数据加载到显存中
+设置渲染状态
+调用DrawCall
 
-Fn+Del
-直接进入关灯模式
+把数据加载到显存中渲染数据先从硬盘（Hard Disk Drive，HDD）加载到内存（Random Access Memory，RAM） ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/12/ATAOFrameWork/FrameWork-Season3Note19/" title="IOC的优点和生命周期"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IOC的优点和生命周期"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/12/ATAOFrameWork/FrameWork-Season3Note19/" title="IOC的优点和生命周期">IOC的优点和生命周期</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-12T11:56:33.000Z" title="发表于 2022-11-12 19:56:33">2022-11-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E7%90%86%E8%AE%BA%E5%BC%BA%E5%8C%96%E7%AF%87/">理论强化篇</a></span></div><div class="content">DI容器的职责先了解一下DI容器的职责是什么。
+职责一般情况下DI容器会提供如下API：
 
+注册类型：Register&lt;TSource,TTarget&gt;
+注入：Inject(object obj)
+解析：Resolve&lt;T&gt;()
 
-Fn+上下方向键
-调整背光亮度，最大档最小档三个指示灯白光闪烁提示，最小档是关闭。（IOS、MAC下按F5、F6调节背光亮度）
+上一篇的例子中，我们使用了Register和Inject，剩下的Resolve在DIContainer中，作用就是根据type返回对应的实例。
+上一篇我们用Inject方法，其内部就是调用了Resolve来返回实例的。
+在决定版架构中，Resolve方法就是IOCCointainer里面的Get方法
+1234567891011public T Get&lt;T&gt;() where T : class&#123;    var key = typeof(T);    if (mInstances.TryGetValue(key, out var retInstance))    &#123;        return retInstance as T;    &#125;    return null;&#125;
 
+这个方法很简 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note18/" title="IOCKit与DI简介"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IOCKit与DI简介"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note18/" title="IOCKit与DI简介">IOCKit与DI简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-11T08:02:24.000Z" title="发表于 2022-11-11 16:02:24">2022-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E7%90%86%E8%AE%BA%E5%BC%BA%E5%8C%96%E7%AF%87/">理论强化篇</a></span></div><div class="content">IOC简介IOC全称为Inversion of Control，即控制反转。
+控制反转是一种设计思想，而不是一个具体的技术实现。这种设计思想用大白话解释就是“我们想要什么就自己拿什么，而不是看给什么”
+一种设计思想可以有多种方式去实现，其中最常见的一个实现方式是DI。
+DIDI，全称为Dependency Injection，即依赖注入。
+依赖这个概念，我们在对象之间的交互里接触过，当时说过一种单向依赖，即自顶向下的依赖。具体是：父节点持有子节点的对象。
+1234public class A&#123;    public B b = new B();&#125;
 
-Fn+左右方向键
-调节背光变化速率
+我们可以说A依赖B，这就是关于依赖的意思，可以理解成持有另一个对象的引用或者在方法中获取另一个对象。
+注入的意思，我们通过下面的代码体会：
+12345678910111213public class A&#123;    public B b = null;&#125;public class B &#123;&#125;void Main()&#123;    var a = new A();    var b = ne ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note17/" title="命令模式（六）小结"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（六）小结"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note17/" title="命令模式（六）小结">命令模式（六）小结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-11T07:19:47.000Z" title="发表于 2022-11-11 15:19:47">2022-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E7%90%86%E8%AE%BA%E5%BC%BA%E5%8C%96%E7%AF%87/">理论强化篇</a></span></div><div class="content">我们第一次解除命令模式是在第一季的时候，决定版架构总的Command对象撑起了整个Controller的交互逻辑的职责。
+其职责如下：
 
+操作Model、System
+可以发送Event
 
-Fn+1
-短按切换到蓝牙设备1，长按3s进入配对
+命令模式定义最开始，我们学习了命令模式的定义，如下：
 
+将请求封装成对象，可以将客户端的不同请求参数化，并配合队列、记录、复原等方法来执行请求操作。
 
-Fn+2
-短按切换到蓝牙设备2，长按3s进入配对
+接着简单聊了一下架构中的Command，其优点如下
 
+专注操作Model与System，使Controller不再那么臃肿
+逻辑以对象为单位进行管理，可以实现比较复杂的功能
 
-Fn+3
-短按切换到蓝牙设备3，长按3s进入配对
+命令模式的参数化和撤销Command参数化非常简单，仅仅只是在Command构造上传参即可。
+接着我们用Command实现了撤销功能，也非常简单，仅仅是在ICommand上增加Undo即可。
+命令与执行隔离我们从命令与执行隔离的角度介绍了：方法、事件机制、Command的实现，三者区别如下：
 
+方法：命令与执行在一起（没有分离）
+Command：执行在Command内部实现（有分离）
+事件机制：执行在事件注册中实现（有分离）
 
-Fn+4
-长按3s进入2.4G配对接收器模式
+以上是空间上的隔离，我们还介绍了时间上的隔离，比如 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note16/" title="命令模式（五）命令模式与开闭原则"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（五）命令模式与开闭原则"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note16/" title="命令模式（五）命令模式与开闭原则">命令模式（五）命令模式与开闭原则</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-11T05:51:09.000Z" title="发表于 2022-11-11 13:51:09">2022-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E7%90%86%E8%AE%BA%E5%BC%BA%E5%8C%96%E7%AF%87/">理论强化篇</a></span></div><div class="content">开闭原则简介开闭原则，即OCP（Open-Close Principle）
+其定义如下：
 
+一个类应该对拓展开放，对修改关闭
 
-Fn+Backspace
-查询当前电量。只能在电池供电的模式下查询
+当一个结构或者系统成型之后，除非遇到一些Bug或者一些软件缺陷，就不应该对系统或结构中的类进行修改，这就是对修改关闭。如果需要增加一些功能，或者扩展一些功能时，这个系统或结构应该通过扩展的方式来增加或扩展一些功能，这就是对扩展开放。
+命令模式与开闭原则这是因为，在经典的命令模式中，有关闭修改的部分，也有开放扩展的部分。
+经典命令中的几个角色：
 
-
-Fn + 组合键功能（Windows、Android系统）
-
-
-组合键
-功能
-
-
-
-Fn+F1
-亮度-
-
-
-Fn+F2
-亮度+
-
-
-Fn+F3
-相当于Win+Tab快捷键（任务控制），使用时请注意Win键不要锁住
-
-
-Fn+F4
-相当于Win+E快捷键（打开我的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/26/ATAOFrameWork/FrameWork-Season2Note33/" title="橡皮擦实现和拖拽绘制"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="橡皮擦实现和拖拽绘制"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/26/ATAOFrameWork/FrameWork-Season2Note33/" title="橡皮擦实现和拖拽绘制">橡皮擦实现和拖拽绘制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-26T07:04:32.000Z" title="发表于 2022-10-26 15:04:32">2022-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">我们需要让我们的编辑器支持两种模式，一种是Draw模式，一种是Erase模式
-添加编辑模式我们使用枚举来指定模式
-修改LevelEditor脚本
-123456789101112131415161718192021222324252627282930using System;using UnityEngine;namespace ShootingEditor2D&#123;    public class LevelEditor : MonoBehaviour    &#123;        public enum OperateMode        &#123;            Draw,            Erase        &#125;        OperateMode mCurrentOperateMode;        //...        Lazy&lt;GUIStyle&gt; mModeLableStyle = new Lazy&lt;GUIStyle&gt;(() =&gt;         &#123;             retur ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/25/ATAOFrameWork/FrameWork-Season2Note32/" title="单击绘制地块、重复检测"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单击绘制地块、重复检测"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/25/ATAOFrameWork/FrameWork-Season2Note32/" title="单击绘制地块、重复检测">单击绘制地块、重复检测</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-25T14:33:00.000Z" title="发表于 2022-10-25 22:33:00">2022-10-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">编辑器功能的初步实现就是要达到一个基本的使用循环，编辑——运行——编辑——运行…编辑功能就是拖拽加上一些摆放的功能，能够保存在一个文本文件里。运行功能就是将文本文件里的内容进行解析，然后运行。
-鼠标高亮编辑功能拆分实现如下
-
-摆放关卡对象
-绘制地形或关卡对象
-重复检测
-橡皮擦
-拖拽绘制
-
-
-保存生成关卡文件
-关卡信息搜集、序列化
-
-
-
-我们在v0.0.5版本中只做一件事情，就是绘制地形实现。
-首先新建一个场景命名为LevelEditor，然后打开这个场景，在其中新建一个空对象命名为LevelEditor，将其Transform重置一下。
-然后新建一个2D Object——Sprite——Square，将其命名为EmptyHighlight，代表着高亮块，用来提示鼠标位置，将sprite的透明度设为128
-然后在Scripts——ViewController——LevelEditor内部新建LevelEditor脚本
-1234567891011121314151617181920using UnityEngine;namespace ShootingEditor2D&#123;    p ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/25/ATAOFrameWork/FrameWork-Season2Note31/" title="v0.0.4归档与v0.0.5版本规划"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="v0.0.4归档与v0.0.5版本规划"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/25/ATAOFrameWork/FrameWork-Season2Note31/" title="v0.0.4归档与v0.0.5版本规划">v0.0.4归档与v0.0.5版本规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-25T06:57:14.000Z" title="发表于 2022-10-25 14:57:14">2022-10-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">归档内容v0.0.4 枪械系统的系统层实现
-
-开枪
-填弹
-捡枪
-换枪
-弹药补给
-补给站补给
-
-打开之前归档用的TXT文件，将此归档内容放在里面即可
-之前的v0.0.4版本规划
- 
-枪械系统：
-
-手枪
-
-冲锋枪
-
-步枪
-
-狙击枪
-
-火箭筒
-
-霰弹枪
-
-不同的枪配有不同的子弹，不同的子弹有不同的射击轨迹、范围、攻击力
-
-
-主角能力：
-
-二段跳
-
-攀墙
-
-冲刺
-
- 
-主角数值：
-
-血量
-
-弹药量
-
-
-敌人：
-
-生命值
-开枪的远程敌人
-掉落弹药补给、回血
-
-关卡：
-
-可破坏物
-陷阱
-机关
-回血道具
-最大生命+1
-终点
-起始点
- 补给站
-
-对话系统
-
-角色设置剧情
-
-系统
-
-存档系统
-关卡编辑系统
-对话系统
-统计系统
-成就系统
-背包系统
-主角的Model
-
-之前的规划过于丰富，所以暂不完全实现了。接下来我们实现关卡编辑系统，我们在v0.0.3版本中，已经确定好了关卡存储格式和解析
-XML关卡制定和解析
-最起码需要能够做到编辑——运行——编辑——运行。。。这样一个步骤
-v0.0.5规划v0.0.5 关卡设计初步实现
-
-绘制地形实现
-橡皮擦实现
-主角绘制
-关卡信息搜集、序列化
-关卡存储与解析
-
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/16/ActionGameProgram/ActionGame-Chapter2Part2/" title="编辑器开发基础知识"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/ActionGameCover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编辑器开发基础知识"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/16/ActionGameProgram/ActionGame-Chapter2Part2/" title="编辑器开发基础知识">编辑器开发基础知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-16T08:38:26.000Z" title="发表于 2022-10-16 16:38:26">2022-10-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/">动作游戏开发实战</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/">前期准备</a></span></div><div class="content">编辑器工具的编写编辑器工具大致可分为脚本Inspector拓展和独立窗口两大部分，这两大部分又涉及SceneView绘制和Preview窗口绘制等。
-Inspector面板拓展
-参考
-Unity游戏开发拓展编辑器1拓展Inspector面板
-Unity游戏开发拓展编辑器2
-脚本序列化 编辑器拓展
-
-新建一个MonoBehaviour脚本，命名为Enemy_Type1
-12345678using UnityEngine;public class Enemy_Type1 : MonoBehaviour&#123;    public int hp = 100;    public float speed = 300;    public GameObject go;&#125;
-
-我们在Project窗口中按“Assets——Scripts——AG——Chapter2——EditorExtensions——Editor”结构创建一系列文件夹
-在Editor文件夹内新建Enemy_Type1Inspector文件
-12345678910111213141516171819202122usin ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/11/AdventureCreator/Adventure-Creator-v172Update/" title="THE INVENTORY SYSTEM'S V1.72 UPDATE"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="THE INVENTORY SYSTEM'S V1.72 UPDATE"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/11/AdventureCreator/Adventure-Creator-v172Update/" title="THE INVENTORY SYSTEM'S V1.72 UPDATE">THE INVENTORY SYSTEM'S V1.72 UPDATE</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-11T10:36:37.000Z" title="发表于 2022-10-11 18:36:37">2022-10-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">AC的Inventory 系统作为其v1.72.0更新的一部分进行了全面重构。本页既概述了它如何从API级别工作，也为希望将自定义脚本移植到新系统的开发人员提供了指南。
-输入Inventory Manager的Inventory Item数据存储在InvItem类中。
-在v1.72.0之前，每当玩家处理一个物品时，都会在运行时生成这个类的副本——无论是在他们自己的Inventory 中，还是在Crafting中，或是放在Container中。这意味着，在脚本中处理这个类时，对InvItem的实际来源存在歧义。此类InvItem类存储在Lists中，并通过外部函数进行修改。
-新的Inventory 系统对此做了两个根本性的改变：
-
-在运行时处理Inventory 时，原始InvItem类将被单独保留。而是创建一个引用InvItem的InvInstance类。这个新类有额外的属性来记录它所代表的Item的数量、选择模式（Use vs Give）等等。虽然原始的InvItem类仍然可以访问，但这意味着它的来源不再模棱两可。
-每当记录物品列表时，无论是用于玩家的Inventory 、Craft ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/11/AdventureCreator/Adventure-Creator-v173Update/" title="THE ACTION SYSTEM'S V1.73 UPDATE"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="THE ACTION SYSTEM'S V1.73 UPDATE"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/11/AdventureCreator/Adventure-Creator-v173Update/" title="THE ACTION SYSTEM'S V1.73 UPDATE">THE ACTION SYSTEM'S V1.73 UPDATE</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-11T02:04:34.000Z" title="发表于 2022-10-11 10:04:34">2022-10-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">AC的Action系统已更新为其v1.73.0更新的一部分。这些更改旨在使Actions更加灵活，减少文件大小，并提高性能。此页面为希望将custom Actions升级到新系统的开发人员提供了指南。
-首先，Actions不再具有设置其分类数据（标题、类别等）的构造函数。相反，这些字段现在通过重写属性进行设置：
-
-title字符串变量现在是一个Title字符串属性
-categoryActionCategory枚举变量现在是一个CategoryActionClassegory enum属性
-description字符串变量现在是Description字符串属性
-
-例如，以下是Engine:Wait Action的分类数据以前是如何声明的：
-1234567public ActionPause ()&#123;	this.isDisplayed = true;	category = ActionCategory.Engine;	title = &quot;Wait&quot;;	description = &quot;Waits a set time before continuing.&q ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/10/AdventureCreator/Adventure-Creator-ActionListDataBackups/" title="ActionList数据备份"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ActionList数据备份"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/10/AdventureCreator/Adventure-Creator-ActionListDataBackups/" title="ActionList数据备份">ActionList数据备份</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-10T14:43:28.000Z" title="发表于 2022-10-10 22:43:28">2022-10-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">由于Unity序列化scene内的ActionList数据的方式，如果在脚本编译错误的情况下启动Unity，则可能会导致在删除错误后，打开的场景中的ActionList数据丢失。
-为了缓解这种情况，AC v1.75.4以后版本每10分钟自动备份一次ActionList数据。
-在Unity 2019.2中，这可以在项目设置中配置，方法是转到Unity顶部工具栏中的编辑-&gt;项目设置..，然后从列表中选择Adventure Creator：
-
-可以通过Autosave interval（m）字段设置备份ActionList数据的频率：
-
-要禁用自动保存，请将其设置为零。
-如果数据丢失，可以按ActionList恢复备份的数据。要还原ActionList的数据，请单击ActionList组件右上角的图标，然后从菜单中选择Action data-&gt;restore：
-
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/10/ATAOFrameWork/FrameWork-Season2Note30/" title="架构演化梳理"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="架构演化梳理"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/10/ATAOFrameWork/FrameWork-Season2Note30/" title="架构演化梳理">架构演化梳理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-10T07:38:59.000Z" title="发表于 2022-10-10 15:38:59">2022-10-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">课程的最开始，是没有用任何架构就做一个《点点点》这样的项目，做的方式就是用拖拽加一点代码的方式。
-但是这种方式有一个问题，就是对象之间的相互访问没有规则也没有限制，在项目规模变大时就一定会混乱。
-于是引入了一个规则，只有自顶向下的时候可以直接访问对象或者调用对象的方法。自底向上的时候使用事件或者委托。而在讲这个规则之前还介绍了对象之间的三种交互方式：方法调用、委托、事件。
-然后自底向上和自顶向下再向上对象之间的三种交互方式构成了一个大的前提，后边比如层级、业务模块等只要有高低之分的我们就都用这套规则去约束了。
-再往下就介绍了一个简单的模块化，介绍了一个单例的模块化。我们在设计的时候经常听到一个原则，就是高内聚低耦合，高内聚的意思就是相同的代码放在一个地方去管理，低耦合就是对象之间的引用不要太多，最好就是单项引用或者没有引用，或者是有一定的规则去约束如何互相访问的。
-再往下就引入了一个概念，就是Model。Model是为什么引入的呢？是因为有一些数据，需要在多个地方去共享，比如角色的攻击力，需要在UI界面上显示，或者计算一个伤害的时候需要使用，以及存储这个攻击力也是一种共享方式。这一类数 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#content-inner">17</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">161</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">38</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note17/" title="命令模式（六）小结"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（六）小结"/></a><div class="content"><a class="title" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note17/" title="命令模式（六）小结">命令模式（六）小结</a><time datetime="2022-11-11T07:19:47.000Z" title="发表于 2022-11-11 15:19:47">2022-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note16/" title="命令模式（五）命令模式与开闭原则"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（五）命令模式与开闭原则"/></a><div class="content"><a class="title" href="/2022/11/11/ATAOFrameWork/FrameWork-Season3Note16/" title="命令模式（五）命令模式与开闭原则">命令模式（五）命令模式与开闭原则</a><time datetime="2022-11-11T05:51:09.000Z" title="发表于 2022-11-11 13:51:09">2022-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/10/ATAOFrameWork/FrameWork-Season3Note15/" title="命令模式（四）经典命令模式"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（四）经典命令模式"/></a><div class="content"><a class="title" href="/2022/11/10/ATAOFrameWork/FrameWork-Season3Note15/" title="命令模式（四）经典命令模式">命令模式（四）经典命令模式</a><time datetime="2022-11-10T07:03:58.000Z" title="发表于 2022-11-10 15:03:58">2022-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/09/ATAOFrameWork/FrameWork-Season3Note14/" title="命令模式（三）命令与执行分离"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（三）命令与执行分离"/></a><div class="content"><a class="title" href="/2022/11/09/ATAOFrameWork/FrameWork-Season3Note14/" title="命令模式（三）命令与执行分离">命令模式（三）命令与执行分离</a><time datetime="2022-11-09T07:05:13.000Z" title="发表于 2022-11-09 15:05:13">2022-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/09/ATAOFrameWork/FrameWork-Season3Note13/" title="命令模式（二）参数化和撤销"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令模式（二）参数化和撤销"/></a><div class="content"><a class="title" href="/2022/11/09/ATAOFrameWork/FrameWork-Season3Note13/" title="命令模式（二）参数化和撤销">命令模式（二）参数化和撤销</a><time datetime="2022-11-09T05:30:07.000Z" title="发表于 2022-11-09 13:30:07">2022-11-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+Invoker
+Receiver
+Command
+ConcreteCommand
+
+其中的ConcreteCommand是我们可以不断扩展的部分，也就是整个命令系统中，ConcreteCommand是开放出来的扩展，而Command是扩展的标准。
+而在系统成型时，Invoker则是不推荐修改的部分，Receiver也许会根据Command的扩展为自己增加一些方法，或者增加Receiver的实现类型，所以也算是开放出来的扩展，但是Receiver的内部代码是不推荐修改的，所以也有对修改关闭的部分。
+总结如下：
+
+Invo ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/#content-inner">19</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">189</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">47</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance11/" title="深入C#字符串"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入C#字符串"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance11/" title="深入C#字符串">深入C#字符串</a><time datetime="2023-03-13T14:07:44.000Z" title="发表于 2023-03-13 22:07:44">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance10/" title="String.Format()"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="String.Format()"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance10/" title="String.Format()">String.Format()</a><time datetime="2023-03-13T14:05:56.000Z" title="发表于 2023-03-13 22:05:56">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance9/" title="正则表达式（Regular Expression）"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则表达式（Regular Expression）"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance9/" title="正则表达式（Regular Expression）">正则表达式（Regular Expression）</a><time datetime="2023-03-13T14:04:17.000Z" title="发表于 2023-03-13 22:04:17">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance8/" title="Linq"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linq"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance8/" title="Linq">Linq</a><time datetime="2023-03-13T14:01:59.000Z" title="发表于 2023-03-13 22:01:59">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance7/" title="委托、Lambda表达式"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="委托、Lambda表达式"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance7/" title="委托、Lambda表达式">委托、Lambda表达式</a><time datetime="2023-03-13T13:59:39.000Z" title="发表于 2023-03-13 21:59:39">2023-03-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
     <i class="fas fa-angle-right"></i></a>
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/"><span class="card-category-list-name">Adventure Creator</span><span class="card-category-list-count">20</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/2D-Tutorial/"><span class="card-category-list-name">2D Tutorial</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/3D-Tutorial/"><span class="card-category-list-name">3D Tutorial</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">自定义与第三方工具</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/"><span class="card-category-list-name">After Effects</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="card-category-list-name">表达式</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/"><span class="card-category-list-name">C#知识</span><span class="card-category-list-count">12</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/C-Tips/"><span class="card-category-list-name">C#Tips</span><span class="card-category-list-count">9</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AE/" style="font-size: 1.1em; color: #999">AE</a> <a href="/tags/Adventure-Creator/" style="font-size: 1.35em; color: #99a3b1">Adventure_Creator</a> <a href="/tags/C/" style="font-size: 1.3em; color: #99a1ac">C#</a> <a href="/tags/DOTween/" style="font-size: 1.2em; color: #999da3">DOTween</a> <a href="/tags/Dialogue-System/" style="font-size: 1.2em; color: #999da3">Dialogue System</a> <a href="/tags/PhotoShop/" style="font-size: 1.15em; color: #999b9e">PhotoShop</a> <a href="/tags/Tips/" style="font-size: 1.15em; color: #999b9e">Tips</a> <a href="/tags/Unity/" style="font-size: 1.15em; color: #999b9e">Unity</a> <a href="/tags/UnityPlugin/" style="font-size: 1.25em; color: #999fa7">UnityPlugin</a> <a href="/tags/Unity%E4%B9%A6%E7%B1%8D/" style="font-size: 1.4em; color: #99a5b6">Unity书籍</a> <a href="/tags/test/" style="font-size: 1.1em; color: #999">test</a> <a href="/tags/testcategories/" style="font-size: 1.1em; color: #999">testcategories</a> <a href="/tags/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.15em; color: #999b9e">动作游戏开发</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" style="font-size: 1.45em; color: #99a7ba">游戏框架搭建</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">27</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">24</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">10</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">161</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-11-11T07:57:01.880Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/"><span class="card-category-list-name">Adventure Creator</span><span class="card-category-list-count">20</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/2D-Tutorial/"><span class="card-category-list-name">2D Tutorial</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/3D-Tutorial/"><span class="card-category-list-name">3D Tutorial</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">自定义与第三方工具</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/"><span class="card-category-list-name">After Effects</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="card-category-list-name">表达式</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/"><span class="card-category-list-name">C#知识</span><span class="card-category-list-count">20</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/C-Tips/"><span class="card-category-list-name">C#Tips</span><span class="card-category-list-count">9</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AE/" style="font-size: 1.1em; color: #999">AE</a> <a href="/tags/Adventure-Creator/" style="font-size: 1.37em; color: #99a4b2">Adventure_Creator</a> <a href="/tags/C/" style="font-size: 1.37em; color: #99a4b2">C#</a> <a href="/tags/DOTS/" style="font-size: 1.28em; color: #99a0aa">DOTS</a> <a href="/tags/DOTween/" style="font-size: 1.19em; color: #999da1">DOTween</a> <a href="/tags/Dialogue-System/" style="font-size: 1.19em; color: #999da1">Dialogue System</a> <a href="/tags/Job-System/" style="font-size: 1.1em; color: #999">Job System</a> <a href="/tags/PhotoShop/" style="font-size: 1.14em; color: #999b9d">PhotoShop</a> <a href="/tags/Shader/" style="font-size: 1.23em; color: #999ea6">Shader</a> <a href="/tags/Tips/" style="font-size: 1.14em; color: #999b9d">Tips</a> <a href="/tags/Unity/" style="font-size: 1.14em; color: #999b9d">Unity</a> <a href="/tags/UnityPlugin/" style="font-size: 1.32em; color: #99a2ae">UnityPlugin</a> <a href="/tags/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" style="font-size: 1.23em; color: #999ea6">UnityShader入门精要</a> <a href="/tags/Unity%E4%B9%A6%E7%B1%8D/" style="font-size: 1.41em; color: #99a5b7">Unity书籍</a> <a href="/tags/test/" style="font-size: 1.1em; color: #999">test</a> <a href="/tags/testcategories/" style="font-size: 1.1em; color: #999">testcategories</a> <a href="/tags/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.14em; color: #999b9d">动作游戏开发</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/%E6%9A%97%E9%BB%91%E6%88%98%E7%A5%9E/" style="font-size: 1.19em; color: #999da1">暗黑战神</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" style="font-size: 1.46em; color: #99a7bb">游戏框架搭建</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">27</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">24</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">16</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">189</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-13T14:37:48.880Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

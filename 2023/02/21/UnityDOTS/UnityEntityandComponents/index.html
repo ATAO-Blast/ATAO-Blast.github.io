@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>UnityECS中的“E”和“C” | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="DOTS"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="基本的Unity GameObject传统的Unity GameObject是很消耗性能的，我们先看一下传统GameObject的结构：  UnityEngine.GameObject  属于C#类 是UnityEngine.Component各种实例的容器 永远包含一个Transform Component 可以作为其他GameObject的子级    UnityEngine.Component">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnityECS中的“E”和“C”">
+<meta property="og:url" content="http://example.com/2023/02/21/UnityDOTS/UnityEntityandComponents/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="基本的Unity GameObject传统的Unity GameObject是很消耗性能的，我们先看一下传统GameObject的结构：  UnityEngine.GameObject  属于C#类 是UnityEngine.Component各种实例的容器 永远包含一个Transform Component 可以作为其他GameObject的子级    UnityEngine.Component">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg">
+<meta property="article:published_time" content="2023-02-21T07:35:57.000Z">
+<meta property="article:modified_time" content="2023-02-22T06:27:01.121Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="DOTS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/02/21/UnityDOTS/UnityEntityandComponents/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'UnityECS中的“E”和“C”',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-22 14:27:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">189</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">47</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">UnityECS中的“E”和“C”</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-21T07:35:57.000Z" title="发表于 2023-02-21 15:35:57">2023-02-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-22T06:27:01.121Z" title="更新于 2023-02-22 14:27:01">2023-02-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity-DOTS/">Unity DOTS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="UnityECS中的“E”和“C”"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="基本的Unity-GameObject"><a href="#基本的Unity-GameObject" class="headerlink" title="基本的Unity GameObject"></a>基本的Unity GameObject</h1><p>传统的Unity GameObject是很消耗性能的，我们先看一下传统GameObject的结构：</p>
+<blockquote>
+<p><code>UnityEngine.GameObject</code></p>
+<ul>
+<li>属于C#类</li>
+<li>是<code>UnityEngine.Component</code>各种实例的容器</li>
+<li>永远包含一个Transform Component</li>
+<li>可以作为其他GameObject的子级</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><code>UnityEngine.Component</code></p>
+<ul>
+<li>属于C#类</li>
+<li>内部包含<code>Update()</code>等一些需要在特定游戏生命周期触发的函数。</li>
+<li>会引用很多managed object（包括GameObjects、其他components还有assets等）</li>
+</ul>
+</blockquote>
+<p><code>UnityEngine.GameObject</code>和<code>UnityEngine.Component</code>都是managed object，不能够在Burst编译器内应用，在大部分情况下也不能应用Jobs。</p>
+<p>创建和销毁GameObjects和它们的Components开销很大，因为Managed Object在内存中分散存在，而不是像在Array中整块儿存在，在Unity生命周期中这些GameObjects和它们的Components在内存中不断被访问，这样并不高效，还会导致出现缓存未命中的性能问题。</p>
+<h1 id="基本的Entity"><a href="#基本的Entity" class="headerlink" title="基本的Entity"></a>基本的Entity</h1><p>为了避免上述情况，我们使用Entity代替GameObjects</p>
+<blockquote>
+<p><code>Unity.Entities</code></p>
+<ul>
+<li>是一串整数ID</li>
+<li>和一系列components相关联（只能关联一种component type，例如关联一个component，它声明为Foo，这个Entity只能关联一个Foo，再加一个是不行的）</li>
+<li>没有内置的父子级概念。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><code>Unity.Entities.IComponentData</code></p>
+<ul>
+<li>C# 结构体</li>
+<li>也许通过ID引用entities，但ID不是managed object，像float、int都不是managed object</li>
+<li>大部分情况下，component和Entity内部没有methods，它们都是纯数据。但这也并不是严格限制</li>
+<li>在UnityECS中，Entities和components会紧密地在arrays里面打包，对内存更好，这样查询（Query）它们的数据会非常高效。</li>
+</ul>
+</blockquote>
+<p><strong>注意：IComponentData是可以应用在class上的，这种component就能够包含managed object了，但这种component就会有上面说的性能问题</strong></p>
+<h1 id="基本的Component声明"><a href="#基本的Component声明" class="headerlink" title="基本的Component声明"></a>基本的Component声明</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Unity.Mathematics;</span><br><span class="line"><span class="keyword">using</span> Unity.Entities;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> Movement : IComponentData</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> float3 Direction;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> Speed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="World概念解释"><a href="#World概念解释" class="headerlink" title="World概念解释"></a>World概念解释</h1><p>World是entities的容器，每个World的Entity都有一个对于当前World唯一的ID，但是如果这个Entity在其他的World中可能会有相同的ID，这一点请注意，不要把ID对应的World搞错了。</p>
+<p>在大多数的情况下，一般只需要一个World，不过创建更多的World在需要逻辑分离的时候很有用，Unity的DOTS Netcode网络开发包为每个服务器和每个客户端都创建了不同的World</p>
+<p><a target="_blank" rel="noopener" href="https://docs-multiplayer.unity3d.com/">Unity Multiplayer Networking | Unity Multiplayer Networking (unity3d.com)</a></p>
+<p>为了管控Entities和components，World提供了EntityManager：</p>
+<ul>
+<li><code>CreateEntity()</code></li>
+<li><code>DestroyEntity()</code></li>
+<li><code>AddComponent()</code></li>
+<li><code>RemoveComponent()</code></li>
+<li><code>GetComponent()</code></li>
+<li><code>SetComponent()</code></li>
+</ul>
+<h1 id="Entities和components的存储方式"><a href="#Entities和components的存储方式" class="headerlink" title="Entities和components的存储方式"></a>Entities和components的存储方式</h1><h2 id="Archetype"><a href="#Archetype" class="headerlink" title="Archetype"></a>Archetype</h2><p>每一个World的Entities都会被分成几类Archetype，每个拥有相同components组合的Entity就会归为一类Archetype</p>
+<h2 id="Chunk"><a href="#Chunk" class="headerlink" title="Chunk"></a>Chunk</h2><p>Chunk是每一类Archetype里存储各个entity和components的块，这些块的大小是均匀一致的</p>
+<p>示意图：</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230221223109604.png" alt="Archetype和Chunk"></p>
+<blockquote>
+<p>这是一个拥有三类Archetype的World</p>
+<p>Archetype A B C指的是同时包含有component A、component B、component C的entities，这些entities和components分成了4个chunk</p>
+<p>Archetype A B 指的是同时包含有component A、component B的entities，这些entities和components分成了2个chunk</p>
+<p>Archetype A  C指的是同时包含有component A、component C的entities，这些entities和components分成了3个chunk</p>
+<p>使用当前World的EntityManager在一个entity中add或者move component，Unity会隐式转换这个entity对应的Archetype。这些增删component的操作会间接导致Archetype和Chunk的改变，我们称之为“structural change operations”，简单地读写component并不是“structural change operations”</p>
+</blockquote>
+<h2 id="Chunk的结构"><a href="#Chunk的结构" class="headerlink" title="Chunk的结构"></a>Chunk的结构</h2><p>这是Archetype A B C的Chunk结构</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230222002128809.png" alt="Chunk结构"></p>
+<p>每一个Chunk内部的entities数量和每个entity的component的数量和Size有关，每个Chunk最大可以有128个entities，超过了这个数量就会创建新的Chunk。</p>
+<p>Chunk内部由entity和component各自的数组组成，Chunk内部的排序规则是：第一个空槽必须被填上。也就是说，如果上图中index0的entity被移除，index1和index2就会向前补位，index1的entity就会变成index0，index2的entity就会变成index1。</p>
+<p>需要注意的是，虽然entity和component各自的数组有相同的index，但是component各个数组的size可能是不同的</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230222003510950.png" alt="Size of component"></p>
+<h1 id="Entity-metadata-Array"><a href="#Entity-metadata-Array" class="headerlink" title="Entity metadata Array"></a>Entity metadata Array</h1><p>World的Entity manager通过“Entity metadata Array”来让我们通过Entity ID来查找Entity，每个Entity ID都指出了自己所在metadata Array Index，即Entity ID Index，此<code>metadata Array[Entity ID index]</code>存储了一个指针和一个Index，该指针指向存储了这个Entity的Chunk，而Index则是这个Entity在Chunk中的Index。如果该Chunk在对应的Index没有Entity，那么<code>metadata Array[Entity ID index]</code>指向这个Chunk的指针就会成为null。</p>
+<p>通过Chunk的结构我们知道，一个Entity销毁了以后，剩下的部分Entity在Chunk内部的Index就会更新，也就是说，当前被销毁的Entity在Chunk内部的index会被重复利用。为了不出问题，在<code>metadata Array[Entity ID index]</code>中还存储了一个Version Number，当Entity被销毁，它在Entity metadata Array中的Version就会改变（增量），所以当一个Entity ID的Version Number和metadata Array中的不一致时，就表示这个Entity被销毁了或者不存在。</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230222020138658.png" alt="Entity metadata Array"></p>
+<h1 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h1><p>Query可以帮助我们高效地按照要查询的component种类来轮询对应的Chunks。</p>
+<p>例如，如果我们创建了一个Query，这个Query想要轮询具有component A和component C的Chunks，那么Archetype A B C和Archetype A  C都会轮询到。</p>
+<p>当然我们也可以指定一个Query，轮询只包含component A和component C的Chunks，并不包含component B，那么只有Archetype A  C会轮询到。</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230222134535551.png" alt="Query"></p>
+<h1 id="JobChunk和JobEntity"><a href="#JobChunk和JobEntity" class="headerlink" title="JobChunk和JobEntity"></a>JobChunk和JobEntity</h1><p>当需要用到轮询的操作，Job System就能够登场了。Unity Entities提供了<code>IJobChunk</code>和<code>IJobEntity</code>接口，前者用于创建轮询chunk的Query Job（在chunk内部，job System也会处理里面的entities和它们的components），后者用于创建轮询entities的Query Job，属于直接轮询entities，并不经过chunk。</p>
+<p>大体上讲<code>IJobChunk</code>并不方便使用，但是它显式提供了更底层的控制方法。</p>
+<p><code>IJobEntity</code>更加方便，它依赖Source Generation来减少模板代码（Boilerplate），不过它在某些用例中可能不适用，必须使用<code>IJobChunk</code>。</p>
+<h1 id="Baking"><a href="#Baking" class="headerlink" title="Baking"></a>Baking</h1><p>Entities并不能在Unity scene环境中工作，必须创建自己的Subscene，<strong>Baking</strong>可以在运行时转换一个GameObject，把它变成序列化的Entity，以供在Entities Subscene中使用。</p>
+<p>一个GameObejct在Bake成为Entity之前可以通过<strong>Baking System</strong>进行一些可选的处理。</p>
+<p>我们可以通过继承一个<code>Baker</code>类来将GameObject下的Component转化为Enitity下的component。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/02/21/UnityDOTS/UnityEntityandComponents/">http://example.com/2023/02/21/UnityDOTS/UnityEntityandComponents/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DOTS/">DOTS</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/22/UnityDOTS/UnityDOTSSystems/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">UnityECS中的“S”</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/20/UnityDOTS/UnityJobSystemIntro/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity Job System介绍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/14/UnityDOTS/UnityDOTS-Part1/" title="DOTS1.0使用：E、C、S创建"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-14</div><div class="title">DOTS1.0使用：E、C、S创建</div></div></a></div><div><a href="/2023/02/16/UnityDOTS/UnityDOTS-Part2/" title="DOTS1.0使用：Aspect、RandomSingleton"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-16</div><div class="title">DOTS1.0使用：Aspect、RandomSingleton</div></div></a></div><div><a href="/2023/02/17/UnityDOTS/UnityDOTS-Part3/" title="DOTS1.0使用：ISystem、IJobEntity"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-17</div><div class="title">DOTS1.0使用：ISystem、IJobEntity</div></div></a></div><div><a href="/2023/02/22/UnityDOTS/UnityDOTSSystems/" title="UnityECS中的“S”"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-22</div><div class="title">UnityECS中的“S”</div></div></a></div><div><a href="/2023/02/18/UnityDOTS/UnityDOTS-Part4/" title="DOTS1.0使用：Entity Prefab、Tag Component"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-18</div><div class="title">DOTS1.0使用：Entity Prefab、Tag Component</div></div></a></div><div><a href="/2023/02/20/UnityDOTS/UnityJobSystemIntro/" title="Unity Job System介绍"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/1581241814427.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-20</div><div class="title">Unity Job System介绍</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">189</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">47</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84Unity-GameObject"><span class="toc-number">1.</span> <span class="toc-text">基本的Unity GameObject</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84Entity"><span class="toc-number">2.</span> <span class="toc-text">基本的Entity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84Component%E5%A3%B0%E6%98%8E"><span class="toc-number">3.</span> <span class="toc-text">基本的Component声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#World%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A"><span class="toc-number">4.</span> <span class="toc-text">World概念解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Entities%E5%92%8Ccomponents%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">Entities和components的存储方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Archetype"><span class="toc-number">5.1.</span> <span class="toc-text">Archetype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chunk"><span class="toc-number">5.2.</span> <span class="toc-text">Chunk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chunk%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">5.3.</span> <span class="toc-text">Chunk的结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Entity-metadata-Array"><span class="toc-number">6.</span> <span class="toc-text">Entity metadata Array</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Query"><span class="toc-number">7.</span> <span class="toc-text">Query</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JobChunk%E5%92%8CJobEntity"><span class="toc-number">8.</span> <span class="toc-text">JobChunk和JobEntity</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Baking"><span class="toc-number">9.</span> <span class="toc-text">Baking</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance11/" title="深入C#字符串"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入C#字符串"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance11/" title="深入C#字符串">深入C#字符串</a><time datetime="2023-03-13T14:07:44.000Z" title="发表于 2023-03-13 22:07:44">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance10/" title="String.Format()"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="String.Format()"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance10/" title="String.Format()">String.Format()</a><time datetime="2023-03-13T14:05:56.000Z" title="发表于 2023-03-13 22:05:56">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance9/" title="正则表达式（Regular Expression）"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则表达式（Regular Expression）"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance9/" title="正则表达式（Regular Expression）">正则表达式（Regular Expression）</a><time datetime="2023-03-13T14:04:17.000Z" title="发表于 2023-03-13 22:04:17">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance8/" title="Linq"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linq"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance8/" title="Linq">Linq</a><time datetime="2023-03-13T14:01:59.000Z" title="发表于 2023-03-13 22:01:59">2023-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/13/CSharp/CSharp-advance7/" title="委托、Lambda表达式"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="委托、Lambda表达式"/></a><div class="content"><a class="title" href="/2023/03/13/CSharp/CSharp-advance7/" title="委托、Lambda表达式">委托、Lambda表达式</a><time datetime="2023-03-13T13:59:39.000Z" title="发表于 2023-03-13 21:59:39">2023-03-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
