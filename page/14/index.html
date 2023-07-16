@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-07-04 17:33:50'
+  postUpdate: '2023-07-16 16:53:23'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,249 +137,133 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">244</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">64</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ATAO2017,阿宅创造奇迹！</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/17/ATAOFrameWork/FrameWork-Season2Note20/" title="枪械冷却功能实现"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="枪械冷却功能实现"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/17/ATAOFrameWork/FrameWork-Season2Note20/" title="枪械冷却功能实现">枪械冷却功能实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-17T07:43:36.000Z" title="发表于 2022-09-17 15:43:36">2022-09-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">有了时间系统，我们就能让枪械发射后能返回默认状态了
-修改ShootCommand
-12345678910111213141516171819using FrameWorkDesign;namespace ShootingEditor2D&#123;    public class ShootCommand : AbstractCommand    &#123;        public static readonly ShootCommand Instance = new ShootCommand();        protected override void OnExecute()        &#123;            //...            var timeSystem = this.GetSystem&lt;ITimeSystem&gt;();            timeSystem.AddTaskDelay(0.33f, () =&gt;            &#123;                gunSystem.CurrentGun. ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/16/ATAOFrameWork/FrameWork-Season2Note19/" title="时间系统"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="时间系统"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/16/ATAOFrameWork/FrameWork-Season2Note19/" title="时间系统">时间系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-16T07:16:11.000Z" title="发表于 2022-09-16 15:16:11">2022-09-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">这一节我们来实现一个简单的时间系统
-ITimeSystem时间系统肯定是在系统层的，它需要游戏一开始初始化时就能统计时间信息。
-在Scripts——System文件夹下新建TimeSystem文件夹，并在其中新建ITimeSystem脚本
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107using System;using System.Collections.Generic;using UnityEngine;using FrameWorkDesign;namespace ShootingEditor2D&#123;    interface ITimeSystem : ISystem    &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note18/" title="开枪底层实现与枪械信息展示"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开枪底层实现与枪械信息展示"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note18/" title="开枪底层实现与枪械信息展示">开枪底层实现与枪械信息展示</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-15T03:04:45.000Z" title="发表于 2022-09-15 11:04:45">2022-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">IGunSystem初始值设定上一节我们实现好了GunInfo和GunState，接下来我们在IGunSystem里面给CurrentGun设置好初始值
-12345678910111213141516171819202122232425262728293031323334353637using FrameWorkDesign;namespace ShootingEditor2D&#123;    interface IGunSystem : ISystem    &#123;        GunInfo CurrentGun &#123; get; &#125;    &#125;    public class GunSystem : AbstractSystem, IGunSystem    &#123;        public GunInfo CurrentGun &#123; get; &#125; = new GunInfo()        &#123;            AmmoNumInGun = new BindableProperty&lt;int&gt; ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note17/" title="GunInfo重构"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GunInfo重构"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/15/ATAOFrameWork/FrameWork-Season2Note17/" title="GunInfo重构">GunInfo重构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-15T01:22:42.000Z" title="发表于 2022-09-15 09:22:42">2022-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">从这一节开始，着手实践贫血模型和充血模型这两个概念，一上来就用纸上设计去实践充血模型非常困难，因为纸上设计需要有一定的抽象能力，而这个抽象能力的前提是大量的编码实践。所以我们先进行一些充血模型的编码实践。
-首先看一下开枪功能实现图
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">255</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">68</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/3565069.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ATAO2017,阿宅创造奇迹！</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/AdventureCreator/Adventure-Creator-ResolutionOption/" title="添加修改屏幕分辨率的选项"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="添加修改屏幕分辨率的选项"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/AdventureCreator/Adventure-Creator-ResolutionOption/" title="添加修改屏幕分辨率的选项">添加修改屏幕分辨率的选项</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T12:28:36.000Z" title="发表于 2022-10-07 20:28:36">2022-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">Adventure Creator内置了对音量和字幕开关等基本选项的支持。然而，在为PC和Mac构建游戏时，可能需要添加更多选项，尤其是图形选项。
+在这个高级教程中，我们将添加更改屏幕分辨率的功能，在游戏中作为一个自定义选项。我们将使用菜单、变量以及一些脚本。脚本编写将是非常基本的，但仍建议您事先掌握编码原则的基本知识，尽管完整的脚本仍全部展示出来。
+可能的分辨率取决于用户的显示器。Unity在其Screen.resolutions中存储了可用选项的数组。
+我们将使用一个整型变量来存储上述数组的当前索引。这将是一个全局变量，因此可以随时访问。
+创建Global Variable首先转到Variables Manager，并添加一个新的Global Variable。
 
-功能实现图转化成代码的方法，有两种简单的方式：
+命名为ScreenResolution，Type设置为Integer，Initial Value为-1。如果发现它为负值，我们可以稍后编写脚本将其设置为正确的值。最后将Link to设置为Options Data。这将使其值在应用程序重新启动后仍然有效，并与保存的游戏文件分开。
 
-从表现层开始写起。先实现界面布局，然后界面基本元素实现，然后再写一个Command（比如ShootCommand），再接着写Command对应的System，比如IGunSystem等，以此类推，就是按照：表现层——交互逻辑——数据&#x2F;系统——表现逻辑   这样的顺序去实现功能。
-从数据开始写起。先设计数据结构，再实现表现层的内容，这种方式的好处是一开始可能考虑得比较周全，程序结构不容易混乱，但是对设计者要求比较高，需要有一定得编码积累和设计经验。
+记下变量的ID号，因为我们在编写脚本时需 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/07/AdventureCreator/Adventure-Creator-CustomActions3/" title="自定义Action-ActionListParameter"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自定义Action-ActionListParameter"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/AdventureCreator/Adventure-Creator-CustomActions3/" title="自定义Action-ActionListParameter">自定义Action-ActionListParameter</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T04:24:28.000Z" title="发表于 2022-10-07 12:24:28">2022-10-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">可以扩展Action以使用ActionList参数，以便在运行时设置字段值。在本教程中，我们将为自定义Action提供接受GameObject参数代替GUI中的字段的能力。
+参数涉及使用Lists，这意味着我们必须首先引入一个新库。在脚本的标题中，添加以下内容：
+1using System.Collections.Generic;
 
-第一种方式简单，符合常人思维，配合纸上设计，也能达到尽可能得周全。
-GunInfo重构修改GunInfo
-12345678910111213141516171819202122232425262728293031using FrameWorkDesig ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/14/ATAOFrameWork/FrameWork-Season2Note16/" title="贫血、充血模型实践说明"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="贫血、充血模型实践说明"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/14/ATAOFrameWork/FrameWork-Season2Note16/" title="贫血、充血模型实践说明">贫血、充血模型实践说明</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-14T03:24:31.000Z" title="发表于 2022-09-14 11:24:31">2022-09-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">目前关于枪械系统的功能都已经实现好了
+我们将参数存储为ID号，这与记录Constant ID的方式非常相似。但是，我们必须确保默认情况下将其设置为-1。添加到声明变量列表：
+1public int parameterID = -1;
 
-开枪
-填弹
-换枪
-捡枪
-弹药补给
-补给站补给
+必须修改ShowGUI函数的重载以接受参数列表。
+1override public void ShowGUI (List&lt;ActionParameter&gt; parameters)
 
-总共6个功能，这6个功能对应6个命令
-在第一季中，我们有说过命令在MVC中是为了分担Controller的交互逻辑部分的职责，交互逻辑在一般情况下操作数据，对数据进行增删改。
-对数据进行变更之后，游戏或者App中的内部状态发生了改变，并对外发送状态变更事件，表现层就会更新视图表现。从接收事件到更新视图表现的这和个过程，就是MVC中的表现逻辑。
-充血模型和贫血模型重点使用的地方就是在表现逻辑中。
-现在枪械系统的六个功能基本上都是交互逻辑的范畴，也就是增删改数据（状态），这方面我们已经练习得够多了，接下来应该把重点放在查询上了。查询的部分其实就是帮助Controller分担表现逻辑职责，不然所有的查询逻辑都写到Controller层的话，那Controller层的代码量就会多很多。
-使用充血模型，将Controller层的查询逻辑分离出来，这样交互逻辑用Command分离，查询逻辑用充血模型，代码更清晰。
-我们的表现逻辑需要有
+然后，我们将调用一个函数，该函数将显示参数选择器（如果有）。如果选择其中一个，我们将重置其他变量-否则，我们将正常显示GUI：
+12345678910111213141516171819public override void ShowGUI (List&lt;Actio ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/06/AdventureCreator/Adventure-Creator-CustomActions2/" title="自定义Action-Constant ID"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自定义Action-Constant ID"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/06/AdventureCreator/Adventure-Creator-CustomActions2/" title="自定义Action-Constant ID">自定义Action-Constant ID</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-06T11:13:03.000Z" title="发表于 2022-10-06 19:13:03">2022-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">在上一教程中，我们创建了一个自定义Action，该Action会影响场景中任何刚体的重力设置。但是，它只适用于“编辑”模式下场景中存在的对象：它不适用于在游戏中实例化的prefab，也不适用于“ActionList”资源文件。我们现在将通过使用Constant ID来解决此问题。
+Constant ID是Adventure Creator在场景之间跟踪游戏对象的方式。当Constant ID脚本附加到GameObject或Prefab时，它给自己分配了一个Constant ID号，我们可以将其合并到Action中。这将允许我们的Action在涉及资产文件时发挥作用。
 
-枪械、子弹的形象
-枪械信息UI
+当作为Assets的ActionList引用Scene中的对象时，就会自动给Scene内的对象附加Constant ID。因为Asset里面的ActionList绝大部分是为了在不同的场景中复用的，不同的场景引用不同的对象，有了Constant ID就能第一时间确定引用，但是我们的ActionGravity还不能支持这个功能，这就是这一节要添加的。
 
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note15/" title="换枪、捡枪、弹药补给功能图绘制"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="换枪、捡枪、弹药补给功能图绘制"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note15/" title="换枪、捡枪、弹药补给功能图绘制">换枪、捡枪、弹药补给功能图绘制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-13T08:01:11.000Z" title="发表于 2022-09-13 16:01:11">2022-09-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">捡枪功能图绘制当Player捡到了一把枪，这个时候主角当前枪的数据应该马上替换成另一把枪的数据。而另一把枪应该包含GunInfo类里所有的数据
+我们首先声明一个新的整数，将ID号记录下来：
+123public Ga ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/06/AdventureCreator/Adventure-Creator-CustomActions/" title="自定义Action-ActionTemplate"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2021-12-11_15-51-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自定义Action-ActionTemplate"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/06/AdventureCreator/Adventure-Creator-CustomActions/" title="自定义Action-ActionTemplate">自定义Action-ActionTemplate</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-06T08:47:27.000Z" title="发表于 2022-10-06 16:47:27">2022-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/">Adventure Creator</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/">自定义与第三方工具</a></span></div><div class="content">Action是AC的核心。Action被设计用来执行特定的任务，ActionList中链接在一起的Actions可以在游戏中形成Cutscenes、Interactions和任何logic sequence。
+虽然Adventure Creator包含50多个“官方”Action，但可以通过编写自定义Action进一步扩展工具包，当我们需要执行传统冒险范围之外的任务时，自定义Action非常有用。
+在本教程中，我们将编写一个Action，可以对任何游戏对象的刚体组件启用或禁用重力。请注意，本教程不是脚本编写指南：只是关于编写AdventureCreator可以使用的自定义代码的教程。
+Action Template每个Action都包含在它自己的脚本文件中。我们可以使用包含的模板文件作为基础，而不是从头开始编写新脚本。在Assets文件夹中，可以找到脚本ActionTemplate.cs，位于AdventureCreator&#x2F;Scripts&#x2F;ActionList中。
 
+1234567891011121314151617181920212223242526272829 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/06/ATAOFrameWork/FrameWork-Season2Note26/" title="捡枪实现"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="捡枪实现"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/06/ATAOFrameWork/FrameWork-Season2Note26/" title="捡枪实现">捡枪实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-06T02:22:51.000Z" title="发表于 2022-10-06 10:22:51">2022-10-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">目前枪械系统的功能列表如下
 
- 这是视频中的截图，bulletCountInGun对应AmmoNumInGun
+ 开枪
+ 底层系统层
+ 表现层
 
-换枪功能图绘制当捡到的特殊枪类的弹药用完之后，主角要换回默认的手枪。我们增加一个枪械切换功能，按下Q键会切换枪，这就需要我们把枪械数据缓存起来。
 
-数据层设计+模块设计+命令+事件&#x3D;游戏核心
-表现层逻辑：加载、卸载（ResourceLoad、AssetBundle）
-弹药补给功能图绘制我们为了方便，将补给的弹药量设为所有武器的弹药量，并不根据武器类型区分弹药。
-弹药补给量根据弹夹子弹的数量来计算，比如冲锋枪弹夹中能装30发子弹，那么捡起一个弹药补给玩家就能增加30发冲锋枪弹药。
+ 填弹
+ 底层系统层
+ 表现层
 
-弹药补给站功能图绘制弹药补给站能够将所有枪的弹夹补满，功能图如下
 
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/" title="开枪实现图与填弹实现图"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开枪实现图与填弹实现图"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/13/ATAOFrameWork/FrameWork-Season2Note14/" title="开枪实现图与填弹实现图">开枪实现图与填弹实现图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-13T01:46:54.000Z" title="发表于 2022-09-13 09:46:54">2022-09-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">在这一节中我们梳理枪械系统的各种功能需求，然后绘制枪械系统的功能实现图
+ 换枪
+ 底层系统层
+ 表现层
 
 
+ 捡枪
+ 底层系统层
+ 表现层
 
-名称
-形象
-子弹
-弹夹容量
-攻击力
-频率
-射程&#x2F;范围
-限制
-换弹时间
-描述
 
+ 弹药补给
+ 底层系统层
+ 表现层
 
 
-手枪
+ 补给站补给
+ 底层系统层
+ 表现层
 
 
-7
-1
-1发&#x2F;秒
-半屏
-无限
-3秒
-默认枪
 
+捡枪的功能实现图如下
 
-冲锋枪
+IGunSystem需要支持枪械的数据能够缓存起来，这个缓存机制在未来还要支持切换枪的功能。
+我们使用Queue（先入先出）来缓存枪械，不过只能单向切枪。数据结构的选取需要考虑数据是否不断变化和数据是否频繁查询。
+修改IGunSystem1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071using FrameWorkDesign;using System.Collections.Generic;using System.Linq;namespace ShootingEditor2D&#123;   ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/30/CSharp/CSharp-tips-Rx/" title="反应式编程"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/CSharpTitlePic.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反应式编程"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/30/CSharp/CSharp-tips-Rx/" title="反应式编程">反应式编程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-30T09:26:46.000Z" title="发表于 2022-09-30 17:26:46">2022-09-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-%E7%9F%A5%E8%AF%86/">C#知识</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/C-%E7%9F%A5%E8%AF%86/C-Tips/">C#Tips</a></span></div><div class="content">反应式编程的科普文章，翻译自https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+什么是反应式编程微软的“反应式编程”指的是“Rx &#x3D; Observables + LINQ + Schedulers”，和其他的反应式编程的概念不太相同。
+反应式编程用一句话总结就是：
+反应式编程就是使用异步数据流进行编程
+在某种程度上，这不是什么新鲜事。事件总线或典型的单击事件实际上是一个异步事件流，您可以观察（Observe）并执行一些操作。反应式是相同的想法。您可以创建任何数据流，而不仅仅是单击和悬停事件。流是廉价且无处不在的，任何东西都可以是流：变量、用户输入、属性、缓存、数据结构等。例如，假设您的推特提要（Feed）是一个数据流，其方式与点击事件相同。你可以监听这个流并做出相应的反应。
+除此之外，您还可以使用一个函数工具箱来组合、创建和过滤这些流。这就是“功能性”魔法发挥作用的地方。流可以用作另一个流的输入。甚至可以将多个流用作另一个流的输入。您可以合并两个流。您可以过滤一个流，以获得另一个只包含您感兴趣的事件的流。您可以将数据值从一个 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/29/ATAOFrameWork/FrameWork-Season2Note25/" title="填弹实现"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="填弹实现"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/29/ATAOFrameWork/FrameWork-Season2Note25/" title="填弹实现">填弹实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T07:58:04.000Z" title="发表于 2022-09-29 15:58:04">2022-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">我们看下枪械系统要做的功能列表
 
+ 开枪
+ 填弹
+ 换枪
+ 捡枪
+ 弹药补给
+ 补给站补给
 
-30
-1
-6发&#x2F;秒
-2&#x2F;3屏幕
-需要弹药
-3秒
-无
+以上的功能列表还可以进一步拆分为如下
 
+ 开枪
+ 底层系统层
+ 表现层
 
-步枪
 
+ 填弹
+ 底层系统层
+ 表现层
 
-50
-3
-3发&#x2F;秒
-1屏
-需要弹药
-1秒
-有一定后坐力
-
-
-狙击枪
 
+ 换枪
+ 底层系统层
+ 表现层
 
-12
-6
-1发&#x2F;秒
-1屏
-需要弹药
-5秒
-红外瞄准+后坐力大
-
-
-火箭筒
 
+ 捡枪
+ 底层系统层
+ 表现层
 
-1
-5
-1发&#x2F;秒
-1屏
-需要弹药
-4秒
-跟踪+爆炸
 
+ 弹药补给
+ 底层系统层
+ 表现层
 
-霰弹枪
 
+ 补给站补给
+ 底层系统层
+ 表现层
 
-1
-1
-1发&#x2F;秒
-半屏
-需要弹药
-1秒
-一次发射6~12颗子弹
 
 
-对于枪械系统，我们在表现层有两个地方需要展示枪械系统的数据，一个是UI界面，一个是角色形象
+我们先看一下填弹的功能实现图
 
-除了这两个比较明显的需求之外，还有一些隐性的功能需求，比如能不能开枪的判断，这个需要根据弹药量进行计算，再比如开枪之后发射什么样的子弹，具体怎么发射，子弹打中敌人怎么样没打中敌人怎么样，这些功能点都是枪械表现层的需求。
-大致的需求如下：
-
-界面 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/12/ATAOFrameWork/FrameWork-Season2Note13/" title="枪械系统需求初步分析"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="枪械系统需求初步分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/12/ATAOFrameWork/FrameWork-Season2Note13/" title="枪械系统需求初步分析">枪械系统需求初步分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-12T06:13:45.000Z" title="发表于 2022-09-12 14:13:45">2022-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">v0.0.4版本规划枪械系统：
-手枪
-冲锋枪
-步枪
-狙击枪
-火箭筒
-霰弹枪
-不同的枪配有不同的子弹，不同的子弹有不同的射击轨迹、范围、攻击力
-
-主角能力：
-二段跳
-攀墙
-冲刺
-
-主角数值：
-血量
-弹药量
-
-敌人：
-生命值
-开枪的远程敌人
-掉落弹药补给、回血
-
-关卡：
-可破坏物
-陷阱
-机关
-回血道具
-最大生命+1
-终点
-起始点
-补给站
-
-对话系统：
-角色设置剧情
-
-系统：
-存档系统
-关卡编辑系统
-对话系统
-统计系统
-成就系统
-背包系统
-主角的Model
-
-v0.0.4版本内容有点多，而且都不是一个具体的可执行方案。
-每一个设计任务都包含游戏设计、程序设计、程序编码三个步骤。因为游戏设计在这里不是重点，所以在接下来的游戏设计仅仅是为了演示框架的使用。
-枪械系统
-手枪
-冲锋枪
-步枪
-狙击枪
-火箭筒
-霰弹枪
-不同的枪配有不同的子弹，不同的子弹有不同的射击轨迹、范围、攻击力
-
-详细设定表
-
-
-
-名称
-形象
-子弹
-弹夹容量
-攻击力
-频率
-射程&#x2F;范围
-限制
-换弹时间
-描述
-
-
-
-手枪
-
-
-7
-1
-1发&#x2F;秒
-半屏
-无限
-3秒
-默认枪
-
-
-冲锋枪
-
-
-30
-1
-6发&#x2F;秒
-2 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/07/ATAOFrameWork/FrameWork-Season2Note12/" title="敌人AI、归档与v0.0.4规划"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="敌人AI、归档与v0.0.4规划"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/07/ATAOFrameWork/FrameWork-Season2Note12/" title="敌人AI、归档与v0.0.4规划">敌人AI、归档与v0.0.4规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-07T08:46:26.000Z" title="发表于 2022-09-07 16:46:26">2022-09-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">修改Enemy的Prefab双击Enemy的Prefab，进入Prefab的编辑界面，为了让AI行动，我们要添加一些检测点。
-给Enemy对象添加子节点，分别命名为WallCheck、FallCheck、GroundCheck，让这些子节点全都挂载Circle Collider 2D和Trigger 2D Check。同时将Trigger 2D Check的Target Layer设为Default，将Circle Collider 2D的Trigger开启，Radius设为0.01.
-将这三个子节点调整到合适的位置。
-
-添加Enemy脚本在ViewController的GamePlay文件夹中添加Enemy脚本，并将此脚本挂载在Enemy的Prefab上，注意在Prefab模式下挂载
-123456789101112131415161718192021222324252627282930313233343536373839using UnityEngine;namespace ShootingEditor2D&#123;    public class Enemy : MonoBeha ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/06/ATAOFrameWork/FrameWork-Season2Note11/" title="弹药补给和消失、角色摄像机弹药转身"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="弹药补给和消失、角色摄像机弹药转身"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/06/ATAOFrameWork/FrameWork-Season2Note11/" title="弹药补给和消失、角色摄像机弹药转身">弹药补给和消失、角色摄像机弹药转身</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-06T02:36:34.000Z" title="发表于 2022-09-06 10:36:34">2022-09-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">弹药补给实现攻击一个敌人时，有20%的概率不增加子弹，80%的概率增加1~3枚子弹。
-直接修改KillEnemyCommand就可以了
-1234567891011121314151617using FrameWorkDesign;using UnityEngine;//namespace ShootingEditor2D&#123;    public class KillEnemyCommand : AbstractCommand    &#123;        protected override void OnExecute()        &#123;            this.GetSystem&lt;IStatSystem&gt;().KillCount.Value++;            var randomIndex = Random.Range(0, 100);//            if(randomIndex &lt; 80)//                this.GetSystem&lt;IGunSystem&gt;().CurrentG ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/13/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/#content-inner">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/#content-inner">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/#content-inner">25</a><a class="extend next" rel="next" href="/page/15/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">244</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">64</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/03/ResourceLoadProgram/Chapter8Part2/" title="知识补充"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="知识补充"/></a><div class="content"><a class="title" href="/2023/07/03/ResourceLoadProgram/Chapter8Part2/" title="知识补充">知识补充</a><time datetime="2023-07-03T11:30:05.000Z" title="发表于 2023-07-03 19:30:05">2023-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/02/ResourceLoadProgram/Chapter8Part1/" title="框架整理"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="框架整理"/></a><div class="content"><a class="title" href="/2023/07/02/ResourceLoadProgram/Chapter8Part1/" title="框架整理">框架整理</a><time datetime="2023-07-02T13:51:48.000Z" title="发表于 2023-07-02 21:51:48">2023-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/02/ResourceLoadProgram/Chapter7Part7/" title="配置表总结"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="配置表总结"/></a><div class="content"><a class="title" href="/2023/07/02/ResourceLoadProgram/Chapter7Part7/" title="配置表总结">配置表总结</a><time datetime="2023-07-02T02:42:12.000Z" title="发表于 2023-07-02 10:42:12">2023-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/28/ResourceLoadProgram/Chapter7Part6/" title="Excel转Xml"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Excel转Xml"/></a><div class="content"><a class="title" href="/2023/06/28/ResourceLoadProgram/Chapter7Part6/" title="Excel转Xml">Excel转Xml</a><time datetime="2023-06-28T11:11:45.000Z" title="发表于 2023-06-28 19:11:45">2023-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/25/ResourceLoadProgram/Chapter7Part5/" title="xml转Excel拓展"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="xml转Excel拓展"/></a><div class="content"><a class="title" href="/2023/06/25/ResourceLoadProgram/Chapter7Part5/" title="xml转Excel拓展">xml转Excel拓展</a><time datetime="2023-06-25T15:14:55.000Z" title="发表于 2023-06-25 23:14:55">2023-06-25</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+按键填弹实现我们先实现按下R键，发送ReloadCommand来填弹
+我们在Command文件夹里新建ReloadCommand文件
+1234567891011121314151617181920212223242526272829303132333435363738using FrameWorkDesign;namespace ShootingEditor2D&#123;    public class ReloadCommand : AbstractCommand    &#123;        protected override void OnExecute()        &#123; ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/25/ATAOFrameWork/FrameWork-Season2Note24/" title="Query与充血、贫血模型的关系"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Query与充血、贫血模型的关系"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/25/ATAOFrameWork/FrameWork-Season2Note24/" title="Query与充血、贫血模型的关系">Query与充血、贫血模型的关系</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-25T03:11:56.000Z" title="发表于 2022-09-25 11:11:56">2022-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">我们在贫血模型和充血模型以及最佳实践里面演示过它们具体的概念：
+充血模型是当查询一个数据的时候，返回的数据不多不少刚好是想要的数据。
+贫血模型是当查询一个数据的时候，返回的数据可能比想要得多，或者比想要得少。
+我们看一下MaxBulletQuery
+1234567891011121314151617181920using FrameWorkDesign;namespace ShootingEditor2D&#123;    public class MaxBulletCountQuery : AbstractQuery&lt;int&gt;    &#123;        private readonly string mGunName;        public MaxBulletCountQuery(string gunName)        &#123;            mGunName = gunName;        &#125;        protected override int OnDo()        &#123;            var  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/24/ATAOFrameWork/FrameWork-Season2Note23/" title="Architecture支持Query"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Architecture支持Query"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/24/ATAOFrameWork/FrameWork-Season2Note23/" title="Architecture支持Query">Architecture支持Query</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-24T06:23:04.000Z" title="发表于 2022-09-24 14:23:04">2022-09-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">在这一节我们正式将Query整合到架构里面
+添加IQuery我们在FrameworkDesign——Framework文件夹内新建Query文件夹，并在其中新建IQuery文件
+12345678910111213141516171819202122232425262728293031using FrameWorkDesign;namespace ShootingEditor2D&#123;    //注意接口一定要用public修饰，否则会出现访问不一致的问题    public interface IQuery&lt;TResult&gt; : IBelongToArchitecture,ICanSetArchitecture,ICanGetModel,ICanGetSystem    &#123;        TResult Do();    &#125;    public abstract class AbstractQuery&lt;TResult&gt; : IQuery&lt;TResult&gt;    &#123;        private IArchitect ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/23/ATAOFrameWork/FrameWork-Season2Note22/" title="弹夹容量查询，引入Query"><img class="post_bg" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Snipaste_2022-06-27_15-08-47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="弹夹容量查询，引入Query"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/23/ATAOFrameWork/FrameWork-Season2Note22/" title="弹夹容量查询，引入Query">弹夹容量查询，引入Query</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-23T03:46:12.000Z" title="发表于 2022-09-23 11:46:12">2022-09-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/">框架搭建决定版</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%86%B3%E5%AE%9A%E7%89%88/%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E7%AF%87/">实践应用篇</a></span></div><div class="content">在这一节，我们需要实现在枪械信息上显示弹夹容量
+直接在UIContorller上面添加一些代码
+1234567891011121314151617181920212223242526272829303132333435using UnityEngine;using FrameWorkDesign;using System;namespace ShootingEditor2D&#123;    public class UIController : MonoBehaviour,IController    &#123;        //...        private int m_MaxBulletCount;//        private void Awake()        &#123;            //...            //查询            var mGunConfigModel = this.GetModel&lt;IGunConfigModel&gt;();//            var mGunConfigItem = mGun ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/13/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/#content-inner">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/#content-inner">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/#content-inner">26</a><a class="extend next" rel="next" href="/page/15/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">255</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">68</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/16/JenkinsTool/Chapter4Part7/" title="Android打包2"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android打包2"/></a><div class="content"><a class="title" href="/2023/07/16/JenkinsTool/Chapter4Part7/" title="Android打包2">Android打包2</a><time datetime="2023-07-16T00:38:58.000Z" title="发表于 2023-07-16 08:38:58">2023-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/14/JenkinsTool/Chapter4Part6/" title="Android打包1"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android打包1"/></a><div class="content"><a class="title" href="/2023/07/14/JenkinsTool/Chapter4Part6/" title="Android打包1">Android打包1</a><time datetime="2023-07-14T10:00:00.000Z" title="发表于 2023-07-14 18:00:00">2023-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/14/JenkinsTool/Chapter4Part5/" title="Jenkins备份"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins备份"/></a><div class="content"><a class="title" href="/2023/07/14/JenkinsTool/Chapter4Part5/" title="Jenkins备份">Jenkins备份</a><time datetime="2023-07-14T08:15:16.000Z" title="发表于 2023-07-14 16:15:16">2023-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/12/JenkinsTool/Chapter4Part4/" title="PC打包"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PC打包"/></a><div class="content"><a class="title" href="/2023/07/12/JenkinsTool/Chapter4Part4/" title="PC打包">PC打包</a><time datetime="2023-07-12T12:03:48.000Z" title="发表于 2023-07-12 20:03:48">2023-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/11/JenkinsTool/Chapter4Part3/" title="Jenkins部署SVN更新"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins部署SVN更新"/></a><div class="content"><a class="title" href="/2023/07/11/JenkinsTool/Chapter4Part3/" title="Jenkins部署SVN更新">Jenkins部署SVN更新</a><time datetime="2023-07-11T08:49:40.000Z" title="发表于 2023-07-11 16:49:40">2023-07-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
@@ -387,5 +271,5 @@ v0.0.4版本内容有点多，而且都不是一个具体的可执行方案。
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/"><span class="card-category-list-name">Adventure Creator</span><span class="card-category-list-count">20</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/2D-Tutorial/"><span class="card-category-list-name">2D Tutorial</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/3D-Tutorial/"><span class="card-category-list-name">3D Tutorial</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Adventure-Creator/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">自定义与第三方工具</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/"><span class="card-category-list-name">After Effects</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/After-Effects/%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="card-category-list-name">表达式</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/"><span class="card-category-list-name">C#知识</span><span class="card-category-list-count">20</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-%E7%9F%A5%E8%AF%86/C-Tips/"><span class="card-category-list-name">C#Tips</span><span class="card-category-list-count">9</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AE/" style="font-size: 1.1em; color: #999">AE</a> <a href="/tags/Adventure-Creator/" style="font-size: 1.32em; color: #99a2ae">Adventure_Creator</a> <a href="/tags/C/" style="font-size: 1.32em; color: #99a2ae">C#</a> <a href="/tags/DOTS/" style="font-size: 1.25em; color: #999fa7">DOTS</a> <a href="/tags/DOTween/" style="font-size: 1.17em; color: #999ca0">DOTween</a> <a href="/tags/Dialogue-System/" style="font-size: 1.17em; color: #999ca0">Dialogue System</a> <a href="/tags/Job-System/" style="font-size: 1.1em; color: #999">Job System</a> <a href="/tags/PhotoShop/" style="font-size: 1.14em; color: #999a9c">PhotoShop</a> <a href="/tags/Shader/" style="font-size: 1.21em; color: #999da3">Shader</a> <a href="/tags/Tips/" style="font-size: 1.14em; color: #999a9c">Tips</a> <a href="/tags/Unity/" style="font-size: 1.14em; color: #999a9c">Unity</a> <a href="/tags/UnityPlugin/" style="font-size: 1.28em; color: #99a0aa">UnityPlugin</a> <a href="/tags/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" style="font-size: 1.21em; color: #999da3">UnityShader入门精要</a> <a href="/tags/Unity%E4%B9%A6%E7%B1%8D/" style="font-size: 1.43em; color: #99a6b8">Unity书籍</a> <a href="/tags/test/" style="font-size: 1.1em; color: #999">test</a> <a href="/tags/testcategories/" style="font-size: 1.1em; color: #999">testcategories</a> <a href="/tags/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.14em; color: #999a9c">动作游戏开发</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/%E6%9A%97%E9%BB%91%E6%88%98%E7%A5%9E/" style="font-size: 1.35em; color: #99a3b1">暗黑战神</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" style="font-size: 1.46em; color: #99a8bc">游戏框架搭建</a> <a href="/tags/%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6/" style="font-size: 1.39em; color: #99a5b5">资源加载框架</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">22</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">17</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">27</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">244</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-04T09:33:49.199Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AE/" style="font-size: 1.1em; color: #999">AE</a> <a href="/tags/Adventure-Creator/" style="font-size: 1.33em; color: #99a2af">Adventure_Creator</a> <a href="/tags/C/" style="font-size: 1.33em; color: #99a2af">C#</a> <a href="/tags/DOTS/" style="font-size: 1.23em; color: #999ea6">DOTS</a> <a href="/tags/DOTween/" style="font-size: 1.17em; color: #999c9f">DOTween</a> <a href="/tags/Dialogue-System/" style="font-size: 1.17em; color: #999c9f">Dialogue System</a> <a href="/tags/Jenkins%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/" style="font-size: 1.3em; color: #99a1ac">Jenkins自动打包</a> <a href="/tags/Job-System/" style="font-size: 1.1em; color: #999">Job System</a> <a href="/tags/PhotoShop/" style="font-size: 1.13em; color: #999a9c">PhotoShop</a> <a href="/tags/Shader/" style="font-size: 1.2em; color: #999da3">Shader</a> <a href="/tags/Tips/" style="font-size: 1.13em; color: #999a9c">Tips</a> <a href="/tags/Unity/" style="font-size: 1.13em; color: #999a9c">Unity</a> <a href="/tags/UnityPlugin/" style="font-size: 1.27em; color: #99a0a9">UnityPlugin</a> <a href="/tags/UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" style="font-size: 1.2em; color: #999da3">UnityShader入门精要</a> <a href="/tags/Unity%E4%B9%A6%E7%B1%8D/" style="font-size: 1.43em; color: #99a6b9">Unity书籍</a> <a href="/tags/test/" style="font-size: 1.1em; color: #999">test</a> <a href="/tags/testcategories/" style="font-size: 1.1em; color: #999">testcategories</a> <a href="/tags/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.13em; color: #999a9c">动作游戏开发</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/%E6%9A%97%E9%BB%91%E6%88%98%E7%A5%9E/" style="font-size: 1.37em; color: #99a4b2">暗黑战神</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" style="font-size: 1.47em; color: #99a8bc">游戏框架搭建</a> <a href="/tags/%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E6%A1%86%E6%9E%B6/" style="font-size: 1.4em; color: #99a5b6">资源加载框架</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">22</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">19</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">17</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">27</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">255</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-16T08:53:22.793Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

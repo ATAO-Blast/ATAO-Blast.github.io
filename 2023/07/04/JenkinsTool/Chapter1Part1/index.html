@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Jenkins安装和配置 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="Jenkins自动打包"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="产品流水线 JDK下载JDK17新版的Jenkins已经不再支持Java8。 Java Downloads | Oracle 中国 下载JDK17，默认安装在“C:\Program Files\Java\jdk-17\”即可 下载完成后，会自动在环境变量中添加如下的Path（要打开Windows环境变量，在此电脑右键——属性——高级系统设置——环境变量，上面是用户变量，下面是系统变量，双击系统变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins安装和配置">
+<meta property="og:url" content="http://example.com/2023/07/04/JenkinsTool/Chapter1Part1/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="产品流水线 JDK下载JDK17新版的Jenkins已经不再支持Java8。 Java Downloads | Oracle 中国 下载JDK17，默认安装在“C:\Program Files\Java\jdk-17\”即可 下载完成后，会自动在环境变量中添加如下的Path（要打开Windows环境变量，在此电脑右键——属性——高级系统设置——环境变量，上面是用户变量，下面是系统变量，双击系统变量">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png">
+<meta property="article:published_time" content="2023-07-04T15:26:38.000Z">
+<meta property="article:modified_time" content="2023-07-12T03:04:41.950Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="Jenkins自动打包">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/04/JenkinsTool/Chapter1Part1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jenkins安装和配置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-12 11:04:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">255</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">68</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Jenkins安装和配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-04T15:26:38.000Z" title="发表于 2023-07-04 23:26:38">2023-07-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-12T03:04:41.950Z" title="更新于 2023-07-12 11:04:41">2023-07-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Jenkins%E5%92%8CSVN/">Jenkins和SVN</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Jenkins%E5%92%8CSVN/Jenkins/">Jenkins</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Jenkins安装和配置"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="产品流水线"><a href="#产品流水线" class="headerlink" title="产品流水线"></a>产品流水线</h1><p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230705101641852.png" alt="产品流水线"></p>
+<h1 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h1><h2 id="JDK17"><a href="#JDK17" class="headerlink" title="JDK17"></a>JDK17</h2><p>新版的Jenkins已经不再支持Java8。</p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows">Java Downloads | Oracle 中国</a></p>
+<p>下载JDK17，默认安装在“C:\Program Files\Java\jdk-17\”即可</p>
+<p>下载完成后，会自动在环境变量中添加如下的Path（要打开Windows环境变量，在此电脑右键——属性——高级系统设置——环境变量，上面是用户变量，下面是系统变量，双击系统变量的Path）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Common Files\Oracle\Java\javapath</span><br></pre></td></tr></table></figure>
+
+<p>这时按Win+R，输入cmd进入命令行，输入“java -version”就能查看Java版本信息。</p>
+<h2 id="JDK1-8（可选）"><a href="#JDK1-8（可选）" class="headerlink" title="JDK1.8（可选）"></a>JDK1.8（可选）</h2><p>Unity使用的是JDK1.8，老版本的Jenkins也可以使用Java 8 SE，也就是JDK1.8的。</p>
+<p>新版本的Unity想要开启安卓开发，就必须在Unity Hub下载“Android Build Support”，在以前的Unity开发中，需要自己安装配置JDK1.8和Android SDK（需要安装Android Studio）。</p>
+<p>新版的Unity在下载完Android Support之后也可以自定义JDK和SDK，见</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/511780987">Unity Android打包之如何自定义配置JDK和SDK - 知乎 (zhihu.com)</a></p>
+<h1 id="Jenkins下载安装"><a href="#Jenkins下载安装" class="headerlink" title="Jenkins下载安装"></a>Jenkins下载安装</h1><p><a target="_blank" rel="noopener" href="https://www.jenkins.io/download/">Jenkins download and deployment</a>，选择LTS——Windows</p>
+<p>打开下载好的”jenkins.msi”文件，安装时将它安装在储存盘内，因为打包好的游戏会归档，占用空间会越来越大</p>
+<p>然后在Jenkins的安装程序中，选择“Run Service as LocalSystem”，端口选择时点击“Test Port”确保无误（这里我们使用默认8080），JDK选择上面的JDK路径，后面就是直接下一步安装即可，最后点击Finish。</p>
+<p>如果没有弹窗，就用浏览器打开“localhost:8080”，按照Jenkins的提示将密码复制过来粘贴进输入框中</p>
+<p>自定义Jenkins——选择插件来安装——选择无来取消安装所有的插件</p>
+<p>创建第一个管理员用户：</p>
+<blockquote>
+<p>Username: ATAO2017</p>
+<p>Password: nimg234’</p>
+<p>Confirm password: nimg234’</p>
+<p>Fullname: <a href="mailto:&#x7a;&#101;&#x72;&#x77;&#x61;&#x72;&#116;&#x40;&#111;&#x75;&#x74;&#x6c;&#111;&#111;&#107;&#46;&#99;&#x6f;&#109;">&#x7a;&#101;&#x72;&#x77;&#x61;&#x72;&#116;&#x40;&#111;&#x75;&#x74;&#x6c;&#111;&#111;&#107;&#46;&#99;&#x6f;&#109;</a></p>
+</blockquote>
+<p>实例配置：这里不做修改，如果是配置在Linux服务器中，这里需要输入Linux服务器的访问地址</p>
+<blockquote>
+<p>Jenkins URL: <a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a></p>
+</blockquote>
+<h1 id="修改Jenkins工作空间"><a href="#修改Jenkins工作空间" class="headerlink" title="修改Jenkins工作空间"></a>修改Jenkins工作空间</h1><p>默认的Jenkins工作空间是<code>C:\ProgramData\Jenkins\.jenkins</code></p>
+<p>在储存盘新建JenkinsWorkspace文件夹。</p>
+<p>Jenkins是一个系统级的服务，打开任务管理器——服务——Jenkins——右键——转到详细信息——在jenkins.exe中右键——打开文件所在位置——在同级文件中打开“jenkins.xml”</p>
+<p>修改这个xml的service节点，将<code>&lt;env name=&quot;JENKINS_HOME&quot; value=&quot;%ProgramData%\Jenkins\.jenkins&quot;/&gt;</code>修改为<code>&lt;env name=&quot;JENKINS_HOME&quot; value=&quot;E:\JenkinsWorkspace&quot;/&gt;</code>（这里的E盘就是储存盘）</p>
+<p>再次开任务管理器——服务——Jenkins——右键——重新启动，我们在浏览器中重新访问<a target="_blank" rel="noopener" href="http://localhost:8080/%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%8C%89%E7%85%A7%E6%8C%87%E7%A4%BA%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEJenkins%E3%80%82">http://localhost:8080/，并且按照指示重新配置Jenkins。</a></p>
+<p>删除掉之前的工作空间。</p>
+<h1 id="修改插件镜像（可选）"><a href="#修改插件镜像（可选）" class="headerlink" title="修改插件镜像（可选）"></a>修改插件镜像（可选）</h1><p>清华大学开源镜像：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json">mirrors.tuna.tsinghua.edu.cn&#x2F;jenkins&#x2F;updates&#x2F;update-center.json</a></p>
+<p>进入Jenkins——左侧选择“Manage Jenkins”——Plugins——左侧选择“Advanced settings”——拉到最下方将Update Site粘贴为上面的URL——点击Submit</p>
+<p>打开Jenkins工作目录（这里为E:\JenkinsWorkspace）——打开updates文件夹——打开default.json</p>
+<p>将<code>updates.jenkins.io/download</code>全部替换为<code>mirrors.tuna.tsinghua.edu.cn/jenkins</code></p>
+<p>将<a target="_blank" rel="noopener" href="http://www.google.com替换为www.baidu.com/">www.google.com替换为www.baidu.com</a></p>
+<p>重启Jenkins服务，可以快速安装Jenkins各种插件了</p>
+<h1 id="配置Jenkins"><a href="#配置Jenkins" class="headerlink" title="配置Jenkins"></a>配置Jenkins</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/490969696">Jenkins 构建Unity（一） - 知乎 (zhihu.com)</a></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>最左侧Manage Jenkins——Plugins——最左侧Available Plugins——搜索输入Unity3D，选择Install即可。再输入Localization：Chinese，Install。</p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><p>回到Manage Jenkins——Tools——JDK——新增JDK：别名-UnityJDK、JAVA_HOME-D:\Program FIles\Unity Editor\2021.3.22f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\OpenJDK（Unity默认下载的JDK位置）。</p>
+<p>Manage Jenkins——Tools——Unity3D——新增Unity3D：别名-2021.3.22、安装目录-D:\Program FIles\Unity Editor\2021.3.22f1c1</p>
+<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><p>将局域网的打包机设为固定的IP，然后其他局域网电脑通过IPAdress:8080就能访问到Jenkins了。</p>
+<h1 id="Jenkins构建"><a href="#Jenkins构建" class="headerlink" title="Jenkins构建"></a>Jenkins构建</h1><p>最左侧新建 item——任务名称“Test”、FreeStyle Project——点击确定。</p>
+<h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p>描述：测试Jenkins</p>
+<p>Discard Old Builds：勾选、保持构建的天数：30、保持构建的最大个数：30.</p>
+<p>This project is parametered：勾选、添加参数——String Parameter——名称：WorkPath、默认值：E:\UnityProjects\ResLoadPrg、描述：工程目录</p>
+<p>高级——展开：使用自定义工作空间：勾选、目录：E:\UnityProjects\ResLoadPrg。显示名称（这个构建在Jenkins显示的名称，用来覆盖之前命名的“Test”任务名称）：Android测试Test</p>
+<blockquote>
+<p>这里的自定义工作空间是为了将多个Job放在同一个工作空间内</p>
+</blockquote>
+<h2 id="构建触发器"><a href="#构建触发器" class="headerlink" title="构建触发器"></a>构建触发器</h2><p>Build periodically：勾选，日程表输入：H 2 * * *（每天凌晨2点开始构建）</p>
+<h2 id="Build-Steps"><a href="#Build-Steps" class="headerlink" title="Build Steps"></a>Build Steps</h2><p>增加构建步骤——Execute Windows batch command（这里我们可以写入<code>echo 测试构建......</code>用作测试）</p>
+<p>增加构建步骤——Invoke Unity3d Editor</p>
+<h2 id="构建后操作"><a href="#构建后操作" class="headerlink" title="构建后操作"></a>构建后操作</h2><p>增加构建后操作步骤——Archive the artifacts</p>
+<p>最后点击保存</p>
+<h1 id="Jenkins-Build"><a href="#Jenkins-Build" class="headerlink" title="Jenkins Build"></a>Jenkins Build</h1><p>我们可以点击进入我们的“Android测试Test”工程，在左侧点击“Build with parameters”，点击“开始构建”。然后在工程左下角就会出现一个绿色对号标记，表示构建成功，点击打开后，在左侧的“控制台输出”可以看到我们写入的echo内容</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/04/JenkinsTool/Chapter1Part1/">http://example.com/2023/07/04/JenkinsTool/Chapter1Part1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Jenkins%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85/">Jenkins自动打包</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/06/JenkinsTool/Chapter2Part1/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">常见命令</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/03/ResourceLoadProgram/Chapter8Part2/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/UnityResPrg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">知识补充</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/08/JenkinsTool/Chapter2Part2/" title="批处理"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-08</div><div class="title">批处理</div></div></a></div><div><a href="/2023/07/10/JenkinsTool/Chapter3Part1/" title="Jenkins打包流程"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-10</div><div class="title">Jenkins打包流程</div></div></a></div><div><a href="/2023/07/11/JenkinsTool/Chapter4Part3/" title="Jenkins部署SVN更新"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-11</div><div class="title">Jenkins部署SVN更新</div></div></a></div><div><a href="/2023/07/12/JenkinsTool/Chapter4Part4/" title="PC打包"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-12</div><div class="title">PC打包</div></div></a></div><div><a href="/2023/07/10/JenkinsTool/Chapter4Part1/" title="SVN搭建"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-10</div><div class="title">SVN搭建</div></div></a></div><div><a href="/2023/07/11/JenkinsTool/Chapter4Part2/" title="SVN命令行"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-11</div><div class="title">SVN命令行</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">255</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">68</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A7%E5%93%81%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.</span> <span class="toc-text">产品流水线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JDK%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">JDK下载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK17"><span class="toc-number">2.1.</span> <span class="toc-text">JDK17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK1-8%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">JDK1.8（可选）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">Jenkins下载安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9Jenkins%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-number">4.</span> <span class="toc-text">修改Jenkins工作空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8F%92%E4%BB%B6%E9%95%9C%E5%83%8F%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">修改插件镜像（可选）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEJenkins"><span class="toc-number">6.</span> <span class="toc-text">配置Jenkins</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-number">6.1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tools"><span class="toc-number">6.2.</span> <span class="toc-text">Tools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System"><span class="toc-number">6.3.</span> <span class="toc-text">System</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins%E6%9E%84%E5%BB%BA"><span class="toc-number">7.</span> <span class="toc-text">Jenkins构建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#General"><span class="toc-number">7.1.</span> <span class="toc-text">General</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">7.2.</span> <span class="toc-text">构建触发器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-Steps"><span class="toc-number">7.3.</span> <span class="toc-text">Build Steps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E5%90%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">7.4.</span> <span class="toc-text">构建后操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jenkins-Build"><span class="toc-number">8.</span> <span class="toc-text">Jenkins Build</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/16/JenkinsTool/Chapter4Part7/" title="Android打包2"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android打包2"/></a><div class="content"><a class="title" href="/2023/07/16/JenkinsTool/Chapter4Part7/" title="Android打包2">Android打包2</a><time datetime="2023-07-16T00:38:58.000Z" title="发表于 2023-07-16 08:38:58">2023-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/14/JenkinsTool/Chapter4Part6/" title="Android打包1"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android打包1"/></a><div class="content"><a class="title" href="/2023/07/14/JenkinsTool/Chapter4Part6/" title="Android打包1">Android打包1</a><time datetime="2023-07-14T10:00:00.000Z" title="发表于 2023-07-14 18:00:00">2023-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/14/JenkinsTool/Chapter4Part5/" title="Jenkins备份"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins备份"/></a><div class="content"><a class="title" href="/2023/07/14/JenkinsTool/Chapter4Part5/" title="Jenkins备份">Jenkins备份</a><time datetime="2023-07-14T08:15:16.000Z" title="发表于 2023-07-14 16:15:16">2023-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/12/JenkinsTool/Chapter4Part4/" title="PC打包"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PC打包"/></a><div class="content"><a class="title" href="/2023/07/12/JenkinsTool/Chapter4Part4/" title="PC打包">PC打包</a><time datetime="2023-07-12T12:03:48.000Z" title="发表于 2023-07-12 20:03:48">2023-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/11/JenkinsTool/Chapter4Part3/" title="Jenkins部署SVN更新"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/banner%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins部署SVN更新"/></a><div class="content"><a class="title" href="/2023/07/11/JenkinsTool/Chapter4Part3/" title="Jenkins部署SVN更新">Jenkins部署SVN更新</a><time datetime="2023-07-11T08:49:40.000Z" title="发表于 2023-07-11 16:49:40">2023-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
