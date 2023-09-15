@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Android Studio准备 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="SDK接入"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Android Studio工程配置Gradle路径打开Android Studio，选择Customize选项，然后点击All settings  在弹出的界面选择Build，Execution，Deployment——Build Tools——Gradle，设置Gradle的位置  建立对应项目打开Android Studio，点击“New Project”，在弹出的页面点击“Base Vie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio准备">
+<meta property="og:url" content="https://atao-blast.github.io/2023/08/15/SDKConnection/Chapter3Part1/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="Android Studio工程配置Gradle路径打开Android Studio，选择Customize选项，然后点击All settings  在弹出的界面选择Build，Execution，Deployment——Build Tools——Gradle，设置Gradle的位置  建立对应项目打开Android Studio，点击“New Project”，在弹出的页面点击“Base Vie">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png">
+<meta property="article:published_time" content="2023-08-15T04:02:22.000Z">
+<meta property="article:modified_time" content="2023-09-02T11:55:26.569Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="SDK接入">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://atao-blast.github.io/2023/08/15/SDKConnection/Chapter3Part1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Android Studio准备',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-02 19:55:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">303</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">85</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Android Studio准备</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-15T04:02:22.000Z" title="发表于 2023-08-15 12:02:22">2023-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-02T11:55:26.569Z" title="更新于 2023-09-02 19:55:26">2023-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QQ%E5%BE%AE%E4%BF%A1SDK/">QQ微信SDK</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QQ%E5%BE%AE%E4%BF%A1SDK/3QQ%E6%8E%A5%E5%85%A5/">3QQ接入</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Android Studio准备"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Android-Studio工程"><a href="#Android-Studio工程" class="headerlink" title="Android Studio工程"></a>Android Studio工程</h1><h2 id="配置Gradle路径"><a href="#配置Gradle路径" class="headerlink" title="配置Gradle路径"></a>配置Gradle路径</h2><p>打开Android Studio，选择Customize选项，然后点击All settings</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230815164122964.png" alt="All Settings"></p>
+<p>在弹出的界面选择Build，Execution，Deployment——Build Tools——Gradle，设置Gradle的位置</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230815164633788.png" alt="Gradle"></p>
+<h2 id="建立对应项目"><a href="#建立对应项目" class="headerlink" title="建立对应项目"></a>建立对应项目</h2><p>打开Android Studio，点击“New Project”，在弹出的页面点击“Base Views Activity”，然后再在弹出的页面输入：</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230815170141553.png" alt="New Project"></p>
+<p><strong>注意</strong>：包名一定要和Unity工程相同</p>
+<blockquote>
+<p>新建项目后，会耗费大量的时间下载Gradle，可以使用腾讯的镜像来快速下载：</p>
+<p>将项目的gradle——wrapper——gradle-wrapper .properties文件修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">distributionBase=GRADLE_USER_HOME</span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line">distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-8.0-all.zip</span><br><span class="line">zipStoreBase=GRADLE_USER_HOME</span><br><span class="line">zipStorePath=wrapper/dists</span><br></pre></td></tr></table></figure>
+
+<p>然后重启项目，等待下载完成。</p>
+</blockquote>
+<h2 id="Android-Studio快捷键"><a href="#Android-Studio快捷键" class="headerlink" title="Android Studio快捷键"></a>Android Studio快捷键</h2><p>Ctrl + Y：删除一行</p>
+<p>Shift + Alt + 上下方向：移动一行</p>
+<p><code>/**</code>加回车：在方法上添加说明文字</p>
+<h1 id="Android-Studio界面"><a href="#Android-Studio界面" class="headerlink" title="Android Studio界面"></a>Android Studio界面</h1><h2 id="Project窗口"><a href="#Project窗口" class="headerlink" title="Project窗口"></a>Project窗口</h2><p>在界面左侧的Project窗口有很多模式，常用的是Project和Android模式。前者能够显示工程内所有文件，后者只根据不同的类来显示文件。</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20230815173049727.png" alt="Project 窗口"></p>
+<p>App的入口脚本位置：ResLoadPrg——app——src——main——java——com.DefaultCompany.ResLoadPrg——MainActivity</p>
+<blockquote>
+<p>由于我们使用的是“Base Views Activity”模板，所以我们必须要修改一下<code>MainActivity</code>，让它变成一个空工程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DefaultCompany.ResLoadPrg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> androidx.appcompat.app.AppCompatActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改成上图这样，其余的代码删掉。</p>
+<p>如果<code>com.DefaultCompany.ResLoadPrg</code>文件夹内还有其他的java代码文件，都删掉，只保留<code>MainActivity</code></p>
+</blockquote>
+<h1 id="jar和aar"><a href="#jar和aar" class="headerlink" title="jar和aar"></a>jar和aar</h1><p>安卓各个平台的接入流程是：</p>
+<ol>
+<li>在Android Studio环境下接入各个平台的SDK，写好和Unity交互的类</li>
+<li>将Android的<strong>代码工程</strong>导出为jar包</li>
+<li>Unity导入jar包和相关平台的依赖库（libs），最终由Unity导出为apk</li>
+</ol>
+<p>jar包的主要内容就是纯安卓工程的代码，而arr包除了代码还包含资源和其他的依赖库。两种资源Unity都能使用，但是一般我们导出的只有jar包，防止arr包再接入其他SDK时出现问题。</p>
+<blockquote>
+<p>使用jar包时要明确此jar包依赖的资源和库，否则在Unity打出来的包会无法运行。</p>
+</blockquote>
+<h2 id="生成jar"><a href="#生成jar" class="headerlink" title="生成jar"></a>生成jar</h2><p>修改ResLoadPrg——app——build.gradle，修改plugins代码块和defaultConfig代码块，以及dependencies代码块(按照下面修改的同时将dependencies多余的部分删除)</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    <span class="comment">//id &#x27;com.android.application&#x27;</span></span><br><span class="line">    id <span class="string">&#x27;com.android.library&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    namespace <span class="string">&#x27;com.DefaultCompany.ResLoadPrg&#x27;</span></span><br><span class="line">    compileSdk <span class="number">33</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        <span class="comment">//applicationId &quot;com.DefaultCompany.ResLoadPrg&quot;</span></span><br><span class="line">        minSdk <span class="number">24</span></span><br><span class="line">        targetSdk <span class="number">33</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="literal">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android-optimize.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br><span class="line">    buildFeatures &#123;</span><br><span class="line">        viewBinding <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line"></span><br><span class="line">    implementation fileTree(<span class="attr">includes:</span> [<span class="string">&#x27;*.jar&#x27;</span>],<span class="attr">dir:</span> <span class="string">&#x27;libs&#x27;</span>)</span><br><span class="line">    implementation <span class="string">&#x27;androidx.appcompat:appcompat:1.6.1&#x27;</span></span><br><span class="line">    implementation <span class="string">&#x27;com.google.android.material:material:1.8.0&#x27;</span></span><br><span class="line">    testImplementation <span class="string">&#x27;junit:junit:4.13.2&#x27;</span></span><br><span class="line">    androidTestImplementation <span class="string">&#x27;androidx.test.ext:junit:1.1.5&#x27;</span></span><br><span class="line">    androidTestImplementation <span class="string">&#x27;androidx.test.espresso:espresso-core:3.5.1&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时点击菜单栏的“Build——ReBuild Project”，然后在<code>build——intermediates——arr_main_jar——debug——classes.jar</code>就是我们生成的jar包了。</p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>我们可以使用终端，将生成的jar包单独提取出来。</p>
+<p>修改build.gradle，在它的最后加</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">task makeJar(<span class="attr">type:</span>Copy)&#123;</span><br><span class="line">    delete <span class="string">&#x27;build/libs/atao.jar&#x27;</span></span><br><span class="line">    from(<span class="string">&#x27;build/intermediates/arr_main_jar/debug/&#x27;</span>)</span><br><span class="line">    into(<span class="string">&#x27;build/libs/&#x27;</span>)</span><br><span class="line">    include(<span class="string">&#x27;classes.jar&#x27;</span>)</span><br><span class="line">    rename(<span class="string">&#x27;classes.jar&#x27;</span>,<span class="string">&#x27;atao.jar&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>顾名思义，这就是将classe.jar复制到<code>build/libs/</code>，并重命名为atao.jar</p>
+<p>想要使用它，我们需要先修改一下Android Studio的设置，在菜单栏File——Settings打开设置窗口，然后点击Tools——Terminal，将Shell Parh改为“<code>C:\WIndows\system32\cmd.exe</code>”。</p>
+<p>然后点击Android Studio底部的“Terminal”工具选项按钮，在打开的窗口中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\AndroidStudioProjects\ResLoadPrg&gt;gradlew makejar</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>经测试，当我们使用gradle8.0时，它不能在Java8环境下启动上面的操作，所以这里只做记录了，如果想要成功运行，需要安装新的JDK。</p>
+<p>另外，如果没有配置Gradle环境变量，系统可能会将gradle再次下载到C盘里，这里贴一个Gradle环境变量的设置。仅供参考。</p>
+<p>添加系统变量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：GRADLE_HOME</span><br><span class="line">变量值：E:\Gradle\wrapper\dists\gradle-8.0-all\a878bwjjv9e3gkwe16laniiuj\gradle-8.0</span><br></pre></td></tr></table></figure>
+
+<p>添加系统变量Path，添加一个Path：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%GRADLE_HOME%\bin</span><br></pre></td></tr></table></figure>
+
+<p>所以目前，我们直接拷贝<code>build——intermediates——arr_main_jar——debug——classes.jar</code>里面的jar包</p>
+</blockquote>
+<h1 id="对接Unity的准备"><a href="#对接Unity的准备" class="headerlink" title="对接Unity的准备"></a>对接Unity的准备</h1><h2 id="删除layout"><a href="#删除layout" class="headerlink" title="删除layout"></a>删除layout</h2><p>首先，进入app——src——main——res——layout文件夹，将内部的xml文件全部删除。如果有弹窗，选择“Delete Anyway”</p>
+<p>此时<code>MainActivity.java</code>会有报错，将<code>setContentView(R.layout.activity_main);</code>一行删掉即可，快捷键Ctrl + Y</p>
+<h2 id="导入Unity的jar"><a href="#导入Unity的jar" class="headerlink" title="导入Unity的jar"></a>导入Unity的jar</h2><p>进入我们的UnityEditor安装目录，找到classes.jar，这里贴个路径供参考</p>
+<p><code>D:\Program FIles\Unity Editor\2021.3.22f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\il2cpp\Development\Classes\classes.jar</code></p>
+<blockquote>
+<p>Unity的mono和il2cpp都有自己的jar包，而且每个脚本后端的jar包都有Development版和Release版。根据自己的需要找一个就可以。</p>
+</blockquote>
+<p>将这个jar包复制粘贴到安卓工程的app——libs文件夹里，并在弹窗中点击“ReFactor”或“OK”，并将”classes.jar”包改名为”unityclasses.jar”</p>
+<blockquote>
+<p>此时如果编辑器窗口有提示（一行蓝条），点击右侧的sync；</p>
+<p>如果没有，点击：File——Project Structure，点击左侧Dependencies，然后点击Modules里面的app，然后在右侧点击加号选择“AAR&#x2F;JAR Dependency”，然后再在弹出的窗口的“Step1”里面输入<code>libs\unityclasses.jar</code>，点击OK确定即可</p>
+</blockquote>
+<p>然后再次进入UnityEditor安装目录，找到UnityPlayerActivity.java，这里贴个路径供参考</p>
+<p><code>D:\Program FIles\Unity Editor\2021.3.22f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Source\com\unity3d\player\UnityPlayerActivity.java</code></p>
+<p>将这个java代码文件复制粘贴到安卓工程的app——src——main——java——com.DefaultCompany.ResLoadPrg内，弹出的窗口点击OK即可。</p>
+<h1 id="修改MainActivity"><a href="#修改MainActivity" class="headerlink" title="修改MainActivity"></a>修改MainActivity</h1><p>修改<code>MainActivity</code>代码文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DefaultCompany.ResLoadPrg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> com.unity3d.player.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">UnityPlayerActivity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io/2023/08/15/SDKConnection/Chapter3Part1/">https://atao-blast.github.io/2023/08/15/SDKConnection/Chapter3Part1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://atao-blast.github.io" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SDK%E6%8E%A5%E5%85%A5/">SDK接入</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/16/SDKConnection/Chapter3Part2/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">GameHelper</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/14/SDKConnection/Chapter2Part2/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">内存信息获取</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/08/13/SDKConnection/Chapter1Part1/" title="前期准备"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-13</div><div class="title">前期准备</div></div></a></div><div><a href="/2023/08/14/SDKConnection/Chapter2Part2/" title="内存信息获取"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-14</div><div class="title">内存信息获取</div></div></a></div><div><a href="/2023/08/14/SDKConnection/Chapter2Part1/" title="Unity平台接入管理"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-14</div><div class="title">Unity平台接入管理</div></div></a></div><div><a href="/2023/08/16/SDKConnection/Chapter3Part3/" title="接入QQ"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-16</div><div class="title">接入QQ</div></div></a></div><div><a href="/2023/08/16/SDKConnection/Chapter3Part2/" title="GameHelper"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-16</div><div class="title">GameHelper</div></div></a></div><div><a href="/2023/08/18/SDKConnection/Chapter3Part4/" title="Manifest文件处理"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/Unity-SDK-Connect.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-18</div><div class="title">Manifest文件处理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">303</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">85</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android-Studio%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">Android Studio工程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGradle%E8%B7%AF%E5%BE%84"><span class="toc-number">1.1.</span> <span class="toc-text">配置Gradle路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E5%AF%B9%E5%BA%94%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.2.</span> <span class="toc-text">建立对应项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Studio%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.3.</span> <span class="toc-text">Android Studio快捷键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android-Studio%E7%95%8C%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">Android Studio界面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Project%E7%AA%97%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">Project窗口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jar%E5%92%8Caar"><span class="toc-number">3.</span> <span class="toc-text">jar和aar</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90jar"><span class="toc-number">3.1.</span> <span class="toc-text">生成jar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">3.2.</span> <span class="toc-text">拓展</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E6%8E%A5Unity%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-number">4.</span> <span class="toc-text">对接Unity的准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4layout"><span class="toc-number">4.1.</span> <span class="toc-text">删除layout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5Unity%E7%9A%84jar"><span class="toc-number">4.2.</span> <span class="toc-text">导入Unity的jar</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9MainActivity"><span class="toc-number">5.</span> <span class="toc-text">修改MainActivity</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/15/SimpleServer/Chapter3Part3/" title="客户端处理消息"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/SimpleServerTitle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="客户端处理消息"/></a><div class="content"><a class="title" href="/2023/09/15/SimpleServer/Chapter3Part3/" title="客户端处理消息">客户端处理消息</a><time datetime="2023-09-15T07:44:35.000Z" title="发表于 2023-09-15 15:44:35">2023-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/14/SimpleServer/Chapter3Part2/" title="客户端关闭连接和解析数据"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/SimpleServerTitle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="客户端关闭连接和解析数据"/></a><div class="content"><a class="title" href="/2023/09/14/SimpleServer/Chapter3Part2/" title="客户端关闭连接和解析数据">客户端关闭连接和解析数据</a><time datetime="2023-09-14T13:57:39.000Z" title="发表于 2023-09-14 21:57:39">2023-09-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/13/SimpleServer/Chapter3Part1/" title="客户端链接和接收"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/SimpleServerTitle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="客户端链接和接收"/></a><div class="content"><a class="title" href="/2023/09/13/SimpleServer/Chapter3Part1/" title="客户端链接和接收">客户端链接和接收</a><time datetime="2023-09-13T07:53:39.000Z" title="发表于 2023-09-13 15:53:39">2023-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/12/SimpleServer/Chapter2Part6/" title="服务器收发数据"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/SimpleServerTitle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器收发数据"/></a><div class="content"><a class="title" href="/2023/09/12/SimpleServer/Chapter2Part6/" title="服务器收发数据">服务器收发数据</a><time datetime="2023-09-12T02:30:40.000Z" title="发表于 2023-09-12 10:30:40">2023-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/SimpleServer/Chapter2Part5/" title="通信协议"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/SimpleServerTitle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通信协议"/></a><div class="content"><a class="title" href="/2023/09/10/SimpleServer/Chapter2Part5/" title="通信协议">通信协议</a><time datetime="2023-09-10T10:53:17.000Z" title="发表于 2023-09-10 18:53:17">2023-09-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
