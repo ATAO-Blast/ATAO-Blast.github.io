@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>其余部分简要2 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="全民飞机大战"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="敌方生成敌方单位生成器一直在屏幕的上方半随机地实例化敌机。 在Logic文件夹中新建Enemy文件夹，并在其中新建IEnemyCreator、EnemyCreator和EnemyCreatorMgr  EnemyCreatorMgr——读取当前关卡的配置LevelData、根据LevelData生成EnemyCreator、记录当前关卡已经生成的普通敌机的比例生成精英飞机，根据已经生成过的普通和敌">
+<meta property="og:type" content="article">
+<meta property="og:title" content="其余部分简要2">
+<meta property="og:url" content="https://atao-blast.github.io/2024/01/04/NationalFighterJets/Chapter2Part20/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="敌方生成敌方单位生成器一直在屏幕的上方半随机地实例化敌机。 在Logic文件夹中新建Enemy文件夹，并在其中新建IEnemyCreator、EnemyCreator和EnemyCreatorMgr  EnemyCreatorMgr——读取当前关卡的配置LevelData、根据LevelData生成EnemyCreator、记录当前关卡已经生成的普通敌机的比例生成精英飞机，根据已经生成过的普通和敌">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png">
+<meta property="article:published_time" content="2024-01-04T01:41:37.000Z">
+<meta property="article:modified_time" content="2024-01-13T02:08:18.940Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="全民飞机大战">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://atao-blast.github.io/2024/01/04/NationalFighterJets/Chapter2Part20/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '其余部分简要2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-13 10:08:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">391</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">96</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">其余部分简要2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-04T01:41:37.000Z" title="发表于 2024-01-04 09:41:37">2024-01-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-13T02:08:18.940Z" title="更新于 2024-01-13 10:08:18">2024-01-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%85%A8%E6%B0%91%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98/">全民飞机大战</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%85%A8%E6%B0%91%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98/2%E6%B8%B8%E6%88%8F%E9%80%BB%E8%BE%91%E7%AF%87/">2游戏逻辑篇</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="其余部分简要2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="敌方生成"><a href="#敌方生成" class="headerlink" title="敌方生成"></a>敌方生成</h1><p>敌方单位生成器一直在屏幕的上方半随机地实例化敌机。</p>
+<p>在Logic文件夹中新建Enemy文件夹，并在其中新建<code>IEnemyCreator</code>、<code>EnemyCreator</code>和<code>EnemyCreatorMgr</code></p>
+<blockquote>
+<p><code>EnemyCreatorMgr</code>——读取当前关卡的配置<code>LevelData</code>、根据<code>LevelData</code>生成<code>EnemyCreator</code>、记录当前关卡已经生成的普通敌机的比例生成精英飞机，<strong>根据已经生成过的普通和敌机数量生成Boss敌机</strong>。读取所有敌机的配置、敌人的配置、敌机轨迹的配置；读取所有敌机的配置<code>AllEnemyData</code>，直接传给<code>EnemyCreator</code></p>
+<p><code>IEnemyCreator</code>——敌机生成器地接口，因为Boss级敌机的行为可能和普通敌机的生成器不同，所以使用接口。</p>
+<p><code>EnemyCreator</code>——读取当前敌机的配置<code>CreatorData</code>和<code>EnemyData</code>，根据配置随机地生成相应的敌机。</p>
+<p><code>Enemy</code>——读取<code>EnemyCreator</code>传进来的<code>EnemyData</code>，使用这个配置数据执行每个敌机逻辑。</p>
+</blockquote>
+<p>为了方便，我们让敌方直接生成为Camera的子物体，这样不用单独让它们向上移动了。使用<code>EnemyCreatorMgr.SpawnCreator</code>方法来生成每种敌方飞机的<code>EnemyCreator</code>。</p>
+<p>在<code>SceneRoot.Init</code>中让Camera挂载<code>EnemyCreatorMgr</code>，因为<code>SceneRoot.Init</code>整个方法都是在加载界面中执行。我们也可以在这个方法中调用<code>EnemyCreatorMgr.Init</code>。</p>
+<p>在<code>Consts</code>中添加<code>ENEMY_PREFIX</code>，用于设置指定的敌机图片名称，这个<code>ENEMY_PREFIX</code>使用<code>string.Format</code>来赋具体的值。</p>
+<p>敌机和玩家所使用的Prefab一样，修改之前的Player这个Prefab，命名为Plane，并记住将<code>Pathes</code>修改。</p>
+<p>敌机的Prefab使用对象池来生成，在<code>PoolCfg</code>脚本中添加敌机对象池配置。我们修改<code>PoolMgr</code>和<code>GameObjectPool</code>，让它提供当前正在活跃的对象的数量，这样我们就可以判断当前已经生成了多少敌机，从而决定生成精英或Boss。</p>
+<p>在Scripts——Logic——Enemy文件夹中新建<code>Enemy</code>继承<code>PlaneView</code>，这个脚本负责具体的敌机外观。</p>
+<h2 id="生成敌机基本逻辑"><a href="#生成敌机基本逻辑" class="headerlink" title="生成敌机基本逻辑"></a>生成敌机基本逻辑</h2><p>在<code>EnemyCreatorMgr</code>中，先生成Normal敌机，判断Normal敌机生成一定数量之后，生成Elite敌机，当Normal敌机和Elite敌机都打完（躲开）后，生成Boss。</p>
+<p>需要注意的是，生成敌机必须在<code>GameStateModel.IsGaming</code>是true的时候才能进行（在下面会添加），如果我们把生成方法直接写在<code>EnemyCreatorMgr</code>读取完配置数据的回调内，生成敌机时<code>PoolMgr</code>还没初始化完成。因为我们在<code>PoolMgr</code>中使用了异步方法，而且还延时100毫秒。</p>
+<h1 id="敌方配置工具"><a href="#敌方配置工具" class="headerlink" title="敌方配置工具"></a>敌方配置工具</h1><p>敌机的图片放在Resources——Picture——Enemy文件夹下，<code>Pathes</code>中定义好路径，敌方飞机根据名称分为三种，Elites、Item、Normal</p>
+<p>在Logic文件夹内新建Data文件夹，在其中新建<code>EnemyCreatorConfigData</code>使用这个类来配置敌方飞机生成器。</p>
+<blockquote>
+<p><code>EnemyCreatorConfigData</code>文件中声明了配置类<code>CreatorData</code>，它提供了每一个敌机生成器的配置信息。</p>
+<p><code>EnemyCreatorConfigData</code>文件中声明了配置类<code>LevelData</code>，它提供了每一个关卡内的敌机信息。</p>
+</blockquote>
+<p>在<code>Enums</code>中添加<code>EnemyType</code>枚举</p>
+<p>在Editor文件夹内新建<code>GenerateLevelConfig</code>，使用这个类来生成敌方配置的json文件。配置文件的Path略</p>
+<blockquote>
+<p>正常情况下需要将Excel转Json，这里简单全都写在类里了。</p>
+</blockquote>
+<h1 id="敌方生成的队形"><a href="#敌方生成的队形" class="headerlink" title="敌方生成的队形"></a>敌方生成的队形</h1><p>制作一个EnemyConfig.json，像Player的配置差不多，配置一下敌机的生命值和开火速度等信息，并在<code>Pathes</code>中指定好路径。</p>
+<p>对应这个配置文件，在Logic——Data文件夹内新建一个配置类<code>AllEnemyData</code>。</p>
+<p>我们在<code>EnemyCreatorMgr</code>中读取EnemyConfig.json。</p>
+<blockquote>
+<p>和之前读取json配置不同，这里读取json配置直接都是使用的<code>JsonMapper.ToObject</code>，这是因为我们定义了<code>AllEnemyData</code>和<code>LevelData</code>等配置类，之前使用<code>JsonReader</code>是不需要配置类直接读取配置的。</p>
+</blockquote>
+<p>每一个敌方自动生成在Plane层下，我们先不让它们挂载移动的组件（后面又加上了），让每个敌机在屏幕上方先生成，然后摄像机自己划过敌机。</p>
+<p>我们首先在飞机的配置中引用轨迹，生成一个敌机队列时，根据飞机轨迹配置和第一个敌机的生成位置等参数（不同的曲线需要的参数不同）来将整个敌机队列的队形生成出来。</p>
+<h2 id="敌机队列轨迹配置"><a href="#敌机队列轨迹配置" class="headerlink" title="敌机队列轨迹配置*"></a>敌机队列轨迹配置*</h2><p>在Logic——Data文件夹新建<code>ITrajctoryData</code>接口并声明<code>StraightTrajectory</code>、<code>EnemyTrajectoryData</code></p>
+<p>在Editor文件夹内新建<code>GenerateTrajectoryData</code>，自动生成轨迹配置，配置文件的路径略。</p>
+<blockquote>
+<p>当配置虽然种类相同，但是具体关联不大时，我们可以在<code>Enums</code>里面定义多个枚举，通过不同的枚举返回不同的配置，比如我们定义过的<code>EnemyType</code>和这里的<code>TrajectoryType</code></p>
+</blockquote>
+<p>在<code>EnemyTrajectoryData</code>里我们希望通过字典返回不同的轨迹类型的配置类数组。但是<code>LitJson.JsonMapper.Tojson</code>不支持字典对象，我们需要<strong>自定义LitJson字典类型的序列化方式</strong>。我们可以通过以下方式新建Json对象：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JsonData jsondata = <span class="keyword">new</span> JsonData();</span><br><span class="line">jsondata[<span class="string">&quot;a&quot;</span>] = <span class="keyword">new</span> JsonData();<span class="comment">//初始化a对象</span></span><br><span class="line">jsondata[<span class="string">&quot;a&quot;</span>].Add(<span class="number">1</span>);<span class="comment">//这一步可以把a对象的值设为数组，此时的json内容为&#123;&quot;a&quot;:[1]&#125;</span></span><br><span class="line">jsondata[<span class="string">&quot;a&quot;</span>][<span class="number">0</span>] = <span class="number">2</span>;<span class="comment">//直接给a对象的数组赋值，注意没有上一步不能直接调用这一步，直接jsondata[&quot;a&quot;][0] = 2;会报错表示没有实例化</span></span><br></pre></td></tr></table></figure>
+
+<p>在Utility文件夹中新建<code>JsonUtil</code>，用来序列化和反序列化C#的字典，注意这里只能序列化特定类型的字典。不同的字典需要写不同的方法。调用<code>jsonData.Add(object)</code>方法时，如果传入的object是string，jsonData会将内容完全转义，让内容变成完全的字符串，所以我们通过<code>JsonData.Add(JsonMapper.ToObject(JsonMapper.ToJson(data)))</code>来转化为json。</p>
+<p>我们在<code>EnemyCreatorMgr</code>中读取EnemyTrajectoryConfig.json。将配置数据传给Creator</p>
+<p>敌机队列的配置<code>EnemyData</code>中声明<code>TrajectoryType</code>和<code>TrajectoryID</code>，前者表示当前敌机类型，后者表示当前敌机队列轨迹id，当id是-1时，表示这个敌机随机挑选一个轨迹生成队列。</p>
+<p>在<code>EnemyTrajectoryData</code>里我们希望通过不同的轨迹id返回不同的队列数据类，但是当id是-1的时候我们的队列数据又是随机选择的，那我们应该怎么能返回不确定结果呢，答案就是使用回调，我们在<code>EnemyTrajectoryData</code>中声明一个<code>Func&lt;StraightTrajectoryData&gt;</code>变量，在id等于-1和不等于-1时，这个func指向不同的方法。</p>
+<p>我们现在有了轨迹数据（<code>ITrajectoryData</code>）还不够，还要把数据传递给轨迹逻辑类（<code>ITrajectory</code>），所以我们修改之前的<code>ITrajectory.Init(float angle)</code>，修改成更通用的<code>ITrajectory.Init(ITrajectoryData data)</code>，我们使用<code>is</code>关键字来判断具体的轨迹数据类即可。</p>
+<h1 id="轨迹逻辑类的工厂"><a href="#轨迹逻辑类的工厂" class="headerlink" title="轨迹逻辑类的工厂"></a>轨迹逻辑类的工厂</h1><p><code>ITrajectory</code>接口作为轨迹计算的逻辑类，调用非常频繁，之前我们直接在<code>BulletModel</code>中不断地New它，这里我们创建一个工厂类，直接调用批量创建。</p>
+<p>在Scripts——Module文件夹内新建Factory文件夹，并在其中新建<code>TrajectoryFactory</code>脚本</p>
+<h1 id="游戏暂停事件"><a href="#游戏暂停事件" class="headerlink" title="游戏暂停事件"></a>游戏暂停事件</h1><p>当游戏暂停时，AudioSource并不会受到影响，我们在<code>MsgEvent</code>添加游戏暂停和恢复的事件。在<code>GameStateModel</code>发布这个事件。</p>
+<p>在<code>AudioMgr</code>中监听这些事件。注意这里的<code>Repaly</code>中判断了<code>GameStateModel</code>的Pause状态。</p>
+<h1 id="敌机移动碰撞"><a href="#敌机移动碰撞" class="headerlink" title="敌机移动碰撞"></a>敌机移动碰撞</h1><p>敌机的组件Enemy继承了<code>PlaneView</code>，这表示所有的敌机都会生成在Plane层下，敌机如果想要移动和Palyer一样需要挂载<code>MoveComponent</code></p>
+<p>敌机的生成队列有一定的轨迹（假如是直线），敌机的飞行方向是这个轨迹的负方向，我们在<code>ExtendUtil</code>中添加获取Vector2负方向的方法。</p>
+<blockquote>
+<p>在敌机的EnemyTrajectoryConfig.json中，不能出现负数的角度（将它转换成钝角），否则敌机的生成队列的负方向就是向上了。</p>
+</blockquote>
+<p>敌机和Player公用相同的Prefab，所以都算2D刚体，处理碰撞逻辑都是相似的。碰撞消息组件需要获取到<code>IBullet</code>接口，所以敌机也要挂载<code>BulletMgr</code>组件。同时还需要挂载<code>IBehaviour</code>组件，新建一个<code>EnemyBehaviour</code></p>
+<p>敌机Enemy需要自己管理自己的生命值等信息，这一点和Player的全局<code>GameModel</code>不一样，所以我们还需要在Logic——Component中添加<code>LifeComponent</code>。这里是以Mono组件的方式提供生命值。</p>
+<h1 id="Player入场动画"><a href="#Player入场动画" class="headerlink" title="Player入场动画"></a>Player入场动画</h1><p>在Logic文件夹内新建Ani文件夹，在里面添加脚本来实现一些由脚本控制的动画。添加<code>PlayerEnterAni</code>，在里面使用DoTween来让Palyer从屏幕下方飞进来。需要注意的是，游戏一开始整个场景都在向上飞，我们的飞机飞进来的动画要加上在这个动画播放的时间内场景移动的距离，所以我们还需要读取一下相机的速度，用它乘时间来获取距离。</p>
+<p>在<code>GameStateModel</code>中添加布尔型标志位，命名为IsGaming，只有这个标志位为true时，我们的Player才会开始发射子弹。我们在DOTween的<code>OnComplete</code>回调中把它设为true，在<code>BulletMgr.Fire</code>这个协程函数里使用while来判断是否应该发射子弹。</p>
+<p>在<code>PlayerView.InitComponent()</code>中添加这个组件。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io/2024/01/04/NationalFighterJets/Chapter2Part20/">https://atao-blast.github.io/2024/01/04/NationalFighterJets/Chapter2Part20/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://atao-blast.github.io" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%85%A8%E6%B0%91%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98/">全民飞机大战</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/12/NationalFighterJets/Chapter2Part21/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">其余部分简要3</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/29/NationalFighterJets/Chapter2Part19/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">其余部分简要1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/10/14/NationalFighterJets/Chapter1Part1/" title="资源加载框架"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-14</div><div class="title">资源加载框架</div></div></a></div><div><a href="/2023/11/02/NationalFighterJets/Chapter1Part10/" title="View层重构"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-02</div><div class="title">View层重构</div></div></a></div><div><a href="/2023/11/04/NationalFighterJets/Chapter1Part11/" title="强化界面3"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-04</div><div class="title">强化界面3</div></div></a></div><div><a href="/2023/10/15/NationalFighterJets/Chapter1Part2/" title="UI管理"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-15</div><div class="title">UI管理</div></div></a></div><div><a href="/2023/10/18/NationalFighterJets/Chapter1Part3/" title="英雄选择和数据持久化"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-18</div><div class="title">英雄选择和数据持久化</div></div></a></div><div><a href="/2023/10/19/NationalFighterJets/Chapter1Part4/" title="配置读取（难点）"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-19</div><div class="title">配置读取（难点）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">391</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">96</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%8C%E6%96%B9%E7%94%9F%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">敌方生成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%95%8C%E6%9C%BA%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text">生成敌机基本逻辑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%8C%E6%96%B9%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7"><span class="toc-number">2.</span> <span class="toc-text">敌方配置工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%8C%E6%96%B9%E7%94%9F%E6%88%90%E7%9A%84%E9%98%9F%E5%BD%A2"><span class="toc-number">3.</span> <span class="toc-text">敌方生成的队形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8C%E6%9C%BA%E9%98%9F%E5%88%97%E8%BD%A8%E8%BF%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">敌机队列轨迹配置*</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%A8%E8%BF%B9%E9%80%BB%E8%BE%91%E7%B1%BB%E7%9A%84%E5%B7%A5%E5%8E%82"><span class="toc-number">4.</span> <span class="toc-text">轨迹逻辑类的工厂</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%9A%82%E5%81%9C%E4%BA%8B%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">游戏暂停事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%8C%E6%9C%BA%E7%A7%BB%E5%8A%A8%E7%A2%B0%E6%92%9E"><span class="toc-number">6.</span> <span class="toc-text">敌机移动碰撞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Player%E5%85%A5%E5%9C%BA%E5%8A%A8%E7%94%BB"><span class="toc-number">7.</span> <span class="toc-text">Player入场动画</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/05/NationalFighterJets/Chapter4Part7/" title="新手引导UI系统"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新手引导UI系统"/></a><div class="content"><a class="title" href="/2024/02/05/NationalFighterJets/Chapter4Part7/" title="新手引导UI系统">新手引导UI系统</a><time datetime="2024-02-05T02:16:10.000Z" title="发表于 2024-02-05 10:16:10">2024-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/04/NationalFighterJets/Chapter4Part6/" title="新手引导设计规范"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新手引导设计规范"/></a><div class="content"><a class="title" href="/2024/02/04/NationalFighterJets/Chapter4Part6/" title="新手引导设计规范">新手引导设计规范</a><time datetime="2024-02-04T08:49:33.000Z" title="发表于 2024-02-04 16:49:33">2024-02-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/01/NationalFighterJets/Chapter4Part5/" title="UI挖孔高亮工具"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UI挖孔高亮工具"/></a><div class="content"><a class="title" href="/2024/02/01/NationalFighterJets/Chapter4Part5/" title="UI挖孔高亮工具">UI挖孔高亮工具</a><time datetime="2024-02-01T14:54:14.000Z" title="发表于 2024-02-01 22:54:14">2024-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/30/NationalFighterJets/Chapter4Part4/" title="ID赋值工具"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ID赋值工具"/></a><div class="content"><a class="title" href="/2024/01/30/NationalFighterJets/Chapter4Part4/" title="ID赋值工具">ID赋值工具</a><time datetime="2024-01-30T08:59:30.000Z" title="发表于 2024-01-30 16:59:30">2024-01-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/29/NationalFighterJets/Chapter4Part3/" title="和UI模块的交互"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/NationalFighterJet1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="和UI模块的交互"/></a><div class="content"><a class="title" href="/2024/01/29/NationalFighterJets/Chapter4Part3/" title="和UI模块的交互">和UI模块的交互</a><time datetime="2024-01-29T08:31:48.000Z" title="发表于 2024-01-29 16:31:48">2024-01-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
