@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>色调映射和视差偏移 | ATAO2017,阿宅创造奇迹！</title><meta name="keywords" content="Shader"><meta name="author" content="ATAO2017"><meta name="copyright" content="ATAO2017"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="色调映射（Tone Mapping）普通LDR显示器的亮度范围在0-1之间（普通8bit显示器，每个通道2的八次方256），而Shader计算出来的颜色值很容易超过此范围，属于HDR（10bit，每个通道2的10次方）。 色调映射（Tone-Mapping）就是将高动态范围的图像亮度压缩到低动态的技术。 这里使用ACES色调映射：  接下来我们在Shader中模拟一下这个色调映射，一般情况下，色调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="色调映射和视差偏移">
+<meta property="og:url" content="https://atao-blast.github.io/2024/08/25/KerryTA/KerryTA-Chapter2Part3/index.html">
+<meta property="og:site_name" content="ATAO2017,阿宅创造奇迹！">
+<meta property="og:description" content="色调映射（Tone Mapping）普通LDR显示器的亮度范围在0-1之间（普通8bit显示器，每个通道2的八次方256），而Shader计算出来的颜色值很容易超过此范围，属于HDR（10bit，每个通道2的10次方）。 色调映射（Tone-Mapping）就是将高动态范围的图像亮度压缩到低动态的技术。 这里使用ACES色调映射：  接下来我们在Shader中模拟一下这个色调映射，一般情况下，色调">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg">
+<meta property="article:published_time" content="2024-08-25T08:05:27.000Z">
+<meta property="article:modified_time" content="2024-08-26T05:03:51.929Z">
+<meta property="article:author" content="ATAO2017">
+<meta property="article:tag" content="Shader">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://atao-blast.github.io/2024/08/25/KerryTA/KerryTA-Chapter2Part3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://jsdelivr.pai233.top/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '色调映射和视差偏移',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-26 13:03:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">405</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">99</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ATAO2017,阿宅创造奇迹！</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">色调映射和视差偏移</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-25T08:05:27.000Z" title="发表于 2024-08-25 16:05:27">2024-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-26T05:03:51.929Z" title="更新于 2024-08-26 13:03:51">2024-08-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Kerry%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/">Kerry技术美术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Kerry%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/%E5%85%89%E7%85%A7%E7%AF%87/">光照篇</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="色调映射和视差偏移"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="色调映射（Tone-Mapping）"><a href="#色调映射（Tone-Mapping）" class="headerlink" title="色调映射（Tone Mapping）"></a>色调映射（Tone Mapping）</h1><p>普通LDR显示器的亮度范围在0-1之间（普通8bit显示器，每个通道2的八次方256），而Shader计算出来的颜色值很容易超过此范围，属于HDR（10bit，每个通道2的10次方）。</p>
+<p>色调映射（Tone-Mapping）就是将高动态范围的图像亮度压缩到低动态的技术。</p>
+<p>这里使用ACES色调映射：</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20240825184818518.png" alt="ACES"></p>
+<p>接下来我们在Shader中模拟一下这个色调映射，一般情况下，色调映射技术是在后处理过程中应用的，这里仅作为学习。</p>
+<p>先在Shader的顶点函数之前声明一个ACES计算函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">float3 <span class="title function_">ACESFilm</span><span class="params">(float3 x)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">float</span> a = <span class="number">2.51f</span>;</span><br><span class="line">    <span class="type">float</span> b = <span class="number">0.03f</span>;</span><br><span class="line">    <span class="type">float</span> c = <span class="number">2.43f</span>;</span><br><span class="line">    <span class="type">float</span> d = <span class="number">0.59f</span>;</span><br><span class="line">    <span class="type">float</span> e = <span class="number">0.14f</span>;</span><br><span class="line">    <span class="keyword">return</span> saturate((x*(a*x + b)) / (x*(c*x + d) + e));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在片元计算的函数中，先把基础的diffuse贴图从gamma空间转换到线性空间：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">half4 base_color = tex2D(_MainTex, i.uv);</span><br><span class="line"><span class="comment">//将基础色从gamma空间转换到线性空间，为了在ACES色调映射中得到更好的效果</span></span><br><span class="line">base_color = <span class="built_in">pow</span>(base_color,<span class="number">2.2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在最后计算颜色时，应用ACES色调映射并且将颜色还原到gamma空间</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">half3 final_color = (diffuse_color + spec_color + ambient_color) * ao_color;<span class="comment">//AO贴图和最终结果乘算</span></span><br><span class="line">half3 tone_color = ACESFilm(final_color);</span><br><span class="line"><span class="comment">//将计算结果转换到gamma空间</span></span><br><span class="line">tone_color = <span class="built_in">pow</span>(tone_color,<span class="number">1.0</span>/<span class="number">2.2</span>);</span><br><span class="line"><span class="keyword">return</span> half4(tone_color, <span class="number">1.0</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="视差偏移（Parallax-Mapping）"><a href="#视差偏移（Parallax-Mapping）" class="headerlink" title="视差偏移（Parallax Mapping）"></a>视差偏移（Parallax Mapping）</h1><p>游戏中凹凸的石板，草地等表面，需要一定的前后遮挡关系，如果只有法线贴图的情况下，从侧面看这些表面并不能反映这种遮挡关系。</p>
+<p>我们可以使用<strong>置换贴图</strong>，使用它之后，模型会先进行表面细分，然后根据贴图指定的高度偏移顶点，从而产生遮挡效果，但是在游戏中很少使用细分。</p>
+<p>这里介绍一种叫做视差偏移（视差映射）的方法，它使用一种视差贴图，利用视错觉来让凹凸表面产生前后遮挡的效果。</p>
+<p>[视差贴图 - LearnOpenGL CN (learnopengl-cn.github.io)](<a target="_blank" rel="noopener" href="https://learnopengl-cn.github.io/05">https://learnopengl-cn.github.io/05</a> Advanced Lighting&#x2F;05 Parallax Mapping&#x2F;)</p>
+<p>首先采样一张视差贴图（高度图），从而获得单个像素的<strong>高度信息</strong>。然后将当前像素到摄像机的向量转化到<strong>切线空间</strong>中（因为切线空间是一个稳定的空间，不会因为模型的旋转而使xyz轴混乱导致结果不正确），得到这个向量后根据高度对向量进行缩放，从而对uv进行偏移。</p>
+<p>在实际应用中，我们会把高度图反相，使用深度图（越白越凹）来进行视差偏移，因为单纯高度贴图不能让模型放大，所以使用深度图更合理。</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20240825204317350.png" alt="深度图"></p>
+<p>首先引用视差贴图，这种贴图只需要单个通道的数据即可，所以我们取half而不是half4</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">half height = tex2D(_ParallaxMap, i.uv);</span><br></pre></td></tr></table></figure>
+
+<p>然后将当前像素到摄像机的向量view_dir转换到切线空间下，使用上一节讲过的TBN矩阵</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">half3 view_dir = normalize(_WorldSpaceCameraPos.xyz - i.pos_world);</span><br><span class="line">half3 normal_dir = normalize(i.normal_dir);</span><br><span class="line">half3 tangent_dir = normalize(i.tangent_dir);</span><br><span class="line">half3 binormal_dir = normalize(i.binormal_dir);</span><br><span class="line">float3x3 TBN = float3x3(tangent_dir, binormal_dir, normal_dir);</span><br><span class="line"></span><br><span class="line">half3 view_tangentspace = normalize(mul(TBN, view_dir));</span><br></pre></td></tr></table></figure>
+
+<p>最后将uv进行偏移，然后再将偏移后的uv应用到其他贴图的<code>tex2D</code>函数中。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">half2 uv_parallax = i.uv - (<span class="number">1.0</span> - height) * view_tangentspace.xy * _Parallax * <span class="number">0.01</span>;</span><br><span class="line"></span><br><span class="line">half4 base_color = tex2D(_MainTex, uv_parallax);</span><br><span class="line"></span><br><span class="line">base_color = <span class="built_in">pow</span>(base_color,<span class="number">2.2</span>);</span><br><span class="line">half4 ao_color = tex2D(_AOMap, uv_parallax);</span><br><span class="line">half4 spec_mask = tex2D(_SpecMask, uv_parallax);</span><br><span class="line">half4 normal_map = tex2D(_NormalMap, uv_parallax);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>首先使用1.0 - height来得到深度图，让这个深度图作为缩放因子和切线空间下的view相乘，然后偏移uv，注意用减法。</p>
+</blockquote>
+<h2 id="陡峭视差映射（Steep-Parallax-Map）"><a href="#陡峭视差映射（Steep-Parallax-Map）" class="headerlink" title="陡峭视差映射（Steep Parallax Map）"></a>陡峭视差映射（Steep Parallax Map）</h2><p>为了让视差偏移更精细，我们每次采样高度图并偏移uv之后，再次用新偏移的uv采样高度图，循环几次得到更精确的结果。</p>
+<p><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/image-20240826121142754.png" alt="陡峭视差映射"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">half2 uv_parallax = i.uv;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">&#123;</span><br><span class="line">    half height = tex2D(_ParallaxMap, uv_parallax);</span><br><span class="line">    uv_parallax = uv_parallax - (<span class="number">1.0</span> - height) * view_tangentspace.xy * _Parallax * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他优化"><a href="#其他优化" class="headerlink" title="其他优化"></a>其他优化</h2><p>如果我们想以高度图亮度的0.5为分界，让图片更分离一些，可以将<code>1.0-height</code>改为<code>0.5-height</code>。</p>
+<p>我们也可以让<code>view_tangentspace.xy</code>除以<code>view_tangentspace.z + 0.42</code>，这个可以用来校正模型边缘，防止扭曲过大。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uv_parallax = uv_parallax - (<span class="number">0.5</span> - height) * (view_tangentspace.xy / view_tangentspace.z + <span class="number">0.42</span>) * _Parallax * <span class="number">0.01</span>;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io">ATAO2017</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://atao-blast.github.io/2024/08/25/KerryTA/KerryTA-Chapter2Part3/">https://atao-blast.github.io/2024/08/25/KerryTA/KerryTA-Chapter2Part3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://atao-blast.github.io" target="_blank">ATAO2017,阿宅创造奇迹！</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Shader/">Shader</a></div><div class="post_share"><div class="social-share" data-image="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/26/KerryTA/KerryTA-Chapter2Part4/"><img class="prev-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Shadowmap</div></div></a></div><div class="next-post pull-right"><a href="/2024/08/25/KerryTA/KerryTA-Chapter2Part2/"><img class="next-cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">法线贴图</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter2Part2/" title="渲染流水线笔记2"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-13</div><div class="title">渲染流水线笔记2</div></div></a></div><div><a href="/2023/02/13/UnityShaderIntro/UnityShaderIntro-Chapter3Part1/" title="Unity Shader概述"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-13</div><div class="title">Unity Shader概述</div></div></a></div><div><a href="/2023/02/12/UnityShaderIntro/UnityShaderIntro-Chapter2Part1/" title="渲染流水线笔记"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-12</div><div class="title">渲染流水线笔记</div></div></a></div><div><a href="/2023/02/14/UnityShaderIntro/UnityShaderIntro-Chapter3Part2/" title="Unity Shader的结构"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-14</div><div class="title">Unity Shader的结构</div></div></a></div><div><a href="/2023/02/24/UnityShaderIntro/UnityShaderIntro-Chapter3Part3/" title="UnityShader的形式"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-24</div><div class="title">UnityShader的形式</div></div></a></div><div><a href="/2023/02/25/UnityShaderIntro/UnityShaderIntro-Chapter4Part1/" title="坐标系、向量"><img class="cover" src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/unityshaderIntro.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">坐标系、向量</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/头像2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ATAO2017</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">405</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">99</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/170871791?spm_id_from=333.1007.0.0"><i class="fas fa-heart"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ATAO-Blast" target="_blank" title="Github主页"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zerwart@outlook.com" target="_blank" title="Email邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到ATAO2017的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%89%B2%E8%B0%83%E6%98%A0%E5%B0%84%EF%BC%88Tone-Mapping%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">色调映射（Tone Mapping）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%B7%AE%E5%81%8F%E7%A7%BB%EF%BC%88Parallax-Mapping%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">视差偏移（Parallax Mapping）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%A1%E5%B3%AD%E8%A7%86%E5%B7%AE%E6%98%A0%E5%B0%84%EF%BC%88Steep-Parallax-Map%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">陡峭视差映射（Steep Parallax Map）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">其他优化</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/03/KerryTA/KerryTA-Chapter2Part8/" title="SSS材质"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSS材质"/></a><div class="content"><a class="title" href="/2024/09/03/KerryTA/KerryTA-Chapter2Part8/" title="SSS材质">SSS材质</a><time datetime="2024-09-03T02:07:25.000Z" title="发表于 2024-09-03 10:07:25">2024-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/01/KerryTA/KerryTA-Chapter2Part7/" title="SH球谐光照"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SH球谐光照"/></a><div class="content"><a class="title" href="/2024/09/01/KerryTA/KerryTA-Chapter2Part7/" title="SH球谐光照">SH球谐光照</a><time datetime="2024-09-01T14:08:54.000Z" title="发表于 2024-09-01 22:08:54">2024-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/31/KerryTA/KerryTA-Chapter2Part6/" title="IBL基于图像的照明"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IBL基于图像的照明"/></a><div class="content"><a class="title" href="/2024/08/31/KerryTA/KerryTA-Chapter2Part6/" title="IBL基于图像的照明">IBL基于图像的照明</a><time datetime="2024-08-31T06:47:55.000Z" title="发表于 2024-08-31 14:47:55">2024-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/28/KerryTA/KerryTA-Chapter2Part5/" title="环境贴图"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="环境贴图"/></a><div class="content"><a class="title" href="/2024/08/28/KerryTA/KerryTA-Chapter2Part5/" title="环境贴图">环境贴图</a><time datetime="2024-08-28T12:17:49.000Z" title="发表于 2024-08-28 20:17:49">2024-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/26/KerryTA/KerryTA-Chapter2Part4/" title="Shadowmap"><img src="https://atao-screenshots.oss-cn-beijing.aliyuncs.com/ScreenShots/KerryTAPost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shadowmap"/></a><div class="content"><a class="title" href="/2024/08/26/KerryTA/KerryTA-Chapter2Part4/" title="Shadowmap">Shadowmap</a><time datetime="2024-08-26T05:08:13.000Z" title="发表于 2024-08-26 13:08:13">2024-08-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By ATAO2017</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">ATAO2017，阿宅创造奇迹</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://jsdelivr.pai233.top/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
